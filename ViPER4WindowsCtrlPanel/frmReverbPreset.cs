@@ -267,12 +267,6 @@ namespace ViPER4WindowsBin
 			this.m_rReverbEarlyMix = 0.25f;
 		}
 
-		// Token: 0x060001B0 RID: 432 RVA: 0x00019864 File Offset: 0x00017A64
-		private void PresetSelected(ButtonBox.Item itPrevItem, ButtonBox.Item itCurrItem, ButtonBox objSender)
-		{
-		}
-
-
 		// Token: 0x040001A1 RID: 417
 		private float m_rReverbSize;
 

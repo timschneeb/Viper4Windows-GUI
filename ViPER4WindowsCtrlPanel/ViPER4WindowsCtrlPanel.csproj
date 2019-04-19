@@ -196,31 +196,10 @@
     </Compile>
     <Compile Include="RegHelper.cs" />
     <Compile Include="TrayMenuPreset.cs" />
-    <Compile Include="UIControls\ButtonBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UIControls\EQShape.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UIControls\HSlider.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UIControls\IRShape.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UIControls\OnOffSwitch.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UIControls\OpenFileBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UIControls\SingleButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UIControls\TwoSelector.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UIControls\VSlider.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Utils\ConfigFile.cs" />
@@ -267,15 +246,8 @@
       <DependentUpon>frmVirtualization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resources" />
-    <EmbeddedResource Include="UIControls\ButtonBox.resources" />
-    <EmbeddedResource Include="UIControls\EQShape.resources" />
-    <EmbeddedResource Include="UIControls\HSlider.resources" />
     <EmbeddedResource Include="UIControls\IRShape.resources" />
-    <EmbeddedResource Include="UIControls\OnOffSwitch.resources" />
     <EmbeddedResource Include="UIControls\OpenFileBox.resources" />
-    <EmbeddedResource Include="UIControls\SingleButton.resources" />
-    <EmbeddedResource Include="UIControls\TwoSelector.resources" />
-    <EmbeddedResource Include="UIControls\VSlider.resources" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

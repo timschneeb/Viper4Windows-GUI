@@ -592,10 +592,10 @@ namespace ViPER4WindowsBin
 		public static string COMPRESSOR_ADJUST = "Compressor";
 
 		// Token: 0x04000375 RID: 885
-		public static string REVERB = "Reverberation";
+		public static string REVERB = "Reverb";
 
 		// Token: 0x04000376 RID: 886
-		public static string REVERB_PRESET = "Reverberation Preset";
+		public static string REVERB_PRESET = "Preset";
 
 		// Token: 0x04000377 RID: 887
 		public static string REVERB_PRESET_LIVINGROOM = "Living Room";
