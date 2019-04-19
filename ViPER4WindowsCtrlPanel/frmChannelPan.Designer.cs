@@ -68,6 +68,7 @@
             this.hSlider_Pan.Size = new System.Drawing.Size(376, 23);
             this.hSlider_Pan.SliderColor = System.Drawing.Color.White;
             this.hSlider_Pan.TabIndex = 5;
+            this.hSlider_Pan.Scroll += new MetroSuite.MetroTrackbar.ScrollEventHandler(this.HSlider_Pan_Scroll);
             // 
             // singleButton_Center
             // 

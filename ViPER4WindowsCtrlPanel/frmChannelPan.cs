@@ -36,13 +36,6 @@ namespace ViPER4WindowsBin
 			this.singleButton_Center.Text = GlobalMessages.BALANCE;
 		}
 
-		// Token: 0x0600016C RID: 364 RVA: 0x0001867C File Offset: 0x0001687C
-		private void hSlider_Pan_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rChannelPan = (fPercent - 0.5f) * 2f;
-			this.label_Value.Text = this.m_rChannelPan.ToString("F01");
-		}
-
 		// Token: 0x0400018F RID: 399
 		private float m_rChannelPan;
 
@@ -50,6 +43,12 @@ namespace ViPER4WindowsBin
         {
 			this.m_rChannelPan = 0f;
 			this.hSlider_Pan.Value = 50;
+        }
+
+        private void HSlider_Pan_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            this.m_rChannelPan = (e.SliderValue - 0.5f) * 2f;
+            this.label_Value.Text = this.m_rChannelPan.ToString("F01");
         }
     }
 }

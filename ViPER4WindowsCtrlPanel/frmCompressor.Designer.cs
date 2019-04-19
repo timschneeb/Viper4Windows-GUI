@@ -22,10 +22,10 @@
             this.hSlider_Threshold = new MetroSuite.MetroTrackbar();
             this.label_Threshold = new System.Windows.Forms.Label();
             this.groupBox_Knee = new System.Windows.Forms.GroupBox();
-            this.onOffSwitch_AutoKnee = new MetroSuite.MetroSwitch();
-            this.label_AutoKnee = new System.Windows.Forms.Label();
-            this.label_Knee = new System.Windows.Forms.Label();
             this.hSlider_Knee = new MetroSuite.MetroTrackbar();
+            this.onOffSwitch_AutoKnee = new MetroSuite.MetroSwitch();
+            this.label_Knee = new System.Windows.Forms.Label();
+            this.label_AutoKnee = new System.Windows.Forms.Label();
             this.label_Ratio = new System.Windows.Forms.Label();
             this.hSlider_Ratio = new MetroSuite.MetroTrackbar();
             this.groupBox_Release = new System.Windows.Forms.GroupBox();
@@ -132,40 +132,6 @@
             this.groupBox_Knee.TabStop = false;
             this.groupBox_Knee.Text = "$COMPRESSOR_KNEEWIDTH";
             // 
-            // onOffSwitch_AutoKnee
-            // 
-            this.onOffSwitch_AutoKnee.BackColor = System.Drawing.Color.Transparent;
-            this.onOffSwitch_AutoKnee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.onOffSwitch_AutoKnee.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
-            this.onOffSwitch_AutoKnee.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.onOffSwitch_AutoKnee.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.onOffSwitch_AutoKnee.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.onOffSwitch_AutoKnee.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.onOffSwitch_AutoKnee.Location = new System.Drawing.Point(224, 19);
-            this.onOffSwitch_AutoKnee.Name = "onOffSwitch_AutoKnee";
-            this.onOffSwitch_AutoKnee.Size = new System.Drawing.Size(41, 24);
-            this.onOffSwitch_AutoKnee.SwitchColor = System.Drawing.Color.White;
-            this.onOffSwitch_AutoKnee.TabIndex = 6;
-            this.onOffSwitch_AutoKnee.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.OnOffSwitch_AutoKnee_CheckedChanged);
-            // 
-            // label_AutoKnee
-            // 
-            this.label_AutoKnee.AutoSize = true;
-            this.label_AutoKnee.Location = new System.Drawing.Point(6, 25);
-            this.label_AutoKnee.Name = "label_AutoKnee";
-            this.label_AutoKnee.Size = new System.Drawing.Size(154, 13);
-            this.label_AutoKnee.TabIndex = 6;
-            this.label_AutoKnee.Text = "$COMPRESSOR_AUTOKNEE";
-            // 
-            // label_Knee
-            // 
-            this.label_Knee.Location = new System.Drawing.Point(182, 50);
-            this.label_Knee.Name = "label_Knee";
-            this.label_Knee.Size = new System.Drawing.Size(83, 18);
-            this.label_Knee.TabIndex = 5;
-            this.label_Knee.Text = "0dB";
-            this.label_Knee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // hSlider_Knee
             // 
             this.hSlider_Knee.BackColor = System.Drawing.Color.Transparent;
@@ -183,6 +149,40 @@
             this.hSlider_Knee.TabIndex = 5;
             this.hSlider_Knee.Value = 0;
             this.hSlider_Knee.Scroll += new MetroSuite.MetroTrackbar.ScrollEventHandler(this.HSlider_Knee_Scroll);
+            // 
+            // onOffSwitch_AutoKnee
+            // 
+            this.onOffSwitch_AutoKnee.BackColor = System.Drawing.Color.Transparent;
+            this.onOffSwitch_AutoKnee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.onOffSwitch_AutoKnee.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.onOffSwitch_AutoKnee.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.onOffSwitch_AutoKnee.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.onOffSwitch_AutoKnee.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.onOffSwitch_AutoKnee.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.onOffSwitch_AutoKnee.Location = new System.Drawing.Point(224, 19);
+            this.onOffSwitch_AutoKnee.Name = "onOffSwitch_AutoKnee";
+            this.onOffSwitch_AutoKnee.Size = new System.Drawing.Size(41, 24);
+            this.onOffSwitch_AutoKnee.SwitchColor = System.Drawing.Color.White;
+            this.onOffSwitch_AutoKnee.TabIndex = 6;
+            this.onOffSwitch_AutoKnee.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.OnOffSwitch_AutoKnee_CheckedChanged);
+            // 
+            // label_Knee
+            // 
+            this.label_Knee.Location = new System.Drawing.Point(182, 50);
+            this.label_Knee.Name = "label_Knee";
+            this.label_Knee.Size = new System.Drawing.Size(83, 18);
+            this.label_Knee.TabIndex = 5;
+            this.label_Knee.Text = "0dB";
+            this.label_Knee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_AutoKnee
+            // 
+            this.label_AutoKnee.AutoSize = true;
+            this.label_AutoKnee.Location = new System.Drawing.Point(6, 25);
+            this.label_AutoKnee.Name = "label_AutoKnee";
+            this.label_AutoKnee.Size = new System.Drawing.Size(154, 13);
+            this.label_AutoKnee.TabIndex = 6;
+            this.label_AutoKnee.Text = "$COMPRESSOR_AUTOKNEE";
             // 
             // label_Ratio
             // 
@@ -425,6 +425,7 @@
             // 
             // hSlider_Gain
             // 
+            this.hSlider_Gain.BackColor = System.Drawing.Color.Transparent;
             this.hSlider_Gain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.hSlider_Gain.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
             this.hSlider_Gain.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
