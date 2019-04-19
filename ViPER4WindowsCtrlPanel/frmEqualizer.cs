@@ -28,41 +28,38 @@ namespace ViPER4WindowsBin
 			this.Text = GlobalMessages.EQUALIZER;
 			this.label_Equalizer_Enable.Text = GlobalMessages.ENABLE;
 			this.checkBox_RealtimeAdjust.Text = GlobalMessages.EQUALIZER_REALTIME_ADJUST;
-			this.singleButton_Preset.ButtonText = GlobalMessages.PRESET;
-			this.singleButton_OK.ButtonText = GlobalMessages.OK;
-			this.m_ctlEQBandList.Add(this.vSlider1);
-			this.m_ctlEQBandList.Add(this.vSlider2);
-			this.m_ctlEQBandList.Add(this.vSlider3);
-			this.m_ctlEQBandList.Add(this.vSlider4);
-			this.m_ctlEQBandList.Add(this.vSlider5);
-			this.m_ctlEQBandList.Add(this.vSlider6);
-			this.m_ctlEQBandList.Add(this.vSlider7);
-			this.m_ctlEQBandList.Add(this.vSlider8);
-			this.m_ctlEQBandList.Add(this.vSlider9);
-			this.m_ctlEQBandList.Add(this.vSlider10);
-			this.m_ctlEQBandList.Add(this.vSlider11);
-			this.m_ctlEQBandList.Add(this.vSlider12);
-			this.m_ctlEQBandList.Add(this.vSlider13);
-			this.m_ctlEQBandList.Add(this.vSlider14);
-			this.m_ctlEQBandList.Add(this.vSlider15);
-			this.m_ctlEQBandList.Add(this.vSlider16);
-			this.m_ctlEQBandList.Add(this.vSlider17);
-			this.m_ctlEQBandList.Add(this.vSlider18);
-			for (int i = 0; i < this.m_ctlEQBandList.Count; i++)
-			{
-				this.m_ctlEQBandList[i].Tag = i.ToString();
-			}
-			for (int j = 0; j < this.m_faEQBands.Length; j++)
+			this.singleButton_Preset.Text = GlobalMessages.PRESET;
+			this.singleButton_OK.Text = GlobalMessages.OK;
+            this.m_ctlEQBandList.Add(this.vSlider1);
+            this.m_ctlEQBandList.Add(this.vSlider2);
+            this.m_ctlEQBandList.Add(this.vSlider3);
+            this.m_ctlEQBandList.Add(this.vSlider4);
+            this.m_ctlEQBandList.Add(this.vSlider5);
+            this.m_ctlEQBandList.Add(this.vSlider6);
+            this.m_ctlEQBandList.Add(this.vSlider7);
+            this.m_ctlEQBandList.Add(this.vSlider8);
+            this.m_ctlEQBandList.Add(this.vSlider9);
+            this.m_ctlEQBandList.Add(this.vSlider10);
+            this.m_ctlEQBandList.Add(this.vSlider11);
+            this.m_ctlEQBandList.Add(this.vSlider12);
+            this.m_ctlEQBandList.Add(this.vSlider13);
+            this.m_ctlEQBandList.Add(this.vSlider14);
+            this.m_ctlEQBandList.Add(this.vSlider15);
+            this.m_ctlEQBandList.Add(this.vSlider16);
+            this.m_ctlEQBandList.Add(this.vSlider17);
+            this.m_ctlEQBandList.Add(this.vSlider18);
+            for (int i = 0; i < this.m_ctlEQBandList.Count; i++)
+            {
+                this.m_ctlEQBandList[i].Tag = i.ToString();
+            }
+            for (int j = 0; j < this.m_faEQBands.Length; j++)
 			{
 				this.m_faEQBands[j] = 1f;
 			}
 			this.m_bEQEnabled = false;
 			this.UpdateUI();
-			foreach (VSlider vslider in this.m_ctlEQBandList)
-			{
-				vslider.PositionChangeNotify += this.EQBandChanged;
-			}
-			this.onOffSwitch_Equalizer.SwitchChangeNotify += this.EQSwitchChange;
+
+			
 		}
 
 		// Token: 0x06000043 RID: 67 RVA: 0x00005424 File Offset: 0x00003624
@@ -70,11 +67,11 @@ namespace ViPER4WindowsBin
 		{
 			if (this.m_bEQEnabled)
 			{
-				this.onOffSwitch_Equalizer.SwitchedOn = true;
+				this.onOffSwitch_Equalizer.Checked = true;
 			}
 			else
 			{
-				this.onOffSwitch_Equalizer.SwitchedOn = false;
+				this.onOffSwitch_Equalizer.Checked = false;
 			}
 			for (int i = 0; i < this.m_faEQBands.Length; i++)
 			{
@@ -95,13 +92,15 @@ namespace ViPER4WindowsBin
 				{
 					num2 = 100u;
 				}
-				this.m_ctlEQBandList[i].Position = num2;
+                if((int)num2*5 > 500) this.m_ctlEQBandList[i].Value = 500;
+                else this.m_ctlEQBandList[i].Value = (int)num2*5;
 			}
 		}
 
 		// Token: 0x06000044 RID: 68 RVA: 0x000054C4 File Offset: 0x000036C4
-		private void EQBandChanged(float fPercent, VSlider objSender)
+		private void EQBandChanged(float fPercent, TrackBar objSender)
 		{
+            //0-5
 			if (objSender == null)
 			{
 				return;
@@ -134,6 +133,7 @@ namespace ViPER4WindowsBin
 				num2 = (fPercent - 0.5f) / 0.5f;
 				num2 = num2 * 4f + 1f;
 			}
+            this.label1.Text = num2.ToString();
 			this.m_faEQBands[num] = num2;
 			if (this.checkBox_RealtimeAdjust.Checked)
 			{
@@ -159,7 +159,7 @@ namespace ViPER4WindowsBin
 		}
 
 		// Token: 0x06000045 RID: 69 RVA: 0x00005600 File Offset: 0x00003800
-		private void EQSwitchChange(bool bSwitchedOn, OnOffSwitch objSender)
+		private void EQSwitchChange(bool bSwitchedOn, MetroSuite.MetroSwitch objSender)
 		{
 			this.m_bEQEnabled = bSwitchedOn;
 			if (this.checkBox_RealtimeAdjust.Checked)
@@ -234,54 +234,6 @@ namespace ViPER4WindowsBin
 			return this.m_bEQEnabled;
 		}
 
-		// Token: 0x06000049 RID: 73 RVA: 0x0000574C File Offset: 0x0000394C
-		private void singleButton_OK_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.OK;
-		}
-
-		// Token: 0x0600004A RID: 74 RVA: 0x00005758 File Offset: 0x00003958
-		private void singleButton_Preset_ButtonClickNotify(SingleButton objSender)
-		{
-			frmEQPreset frmEQPreset = new frmEQPreset();
-			frmEQPreset.SetPreset(this.m_faEQBands);
-			if (frmEQPreset.ShowDialog() == DialogResult.Cancel)
-			{
-				return;
-			}
-			float[] preset = frmEQPreset.GetPreset();
-			if (preset == null)
-			{
-				return;
-			}
-			if (preset.Length != this.m_faEQBands.Length)
-			{
-				return;
-			}
-			Array.Copy(preset, this.m_faEQBands, this.m_faEQBands.Length);
-			if (this.checkBox_RealtimeAdjust.Checked)
-			{
-				if (this.m_paramBaseSystem.m_nEffectMode == 0u)
-				{
-					Array.Copy(this.m_faEQBands, this.m_paramMusicMode.m_rpEqualizerBands, this.m_faEQBands.Length);
-					this.m_cpConfigProxy.UpdateParameter(this.m_paramMusicMode);
-					this.m_cpConfigProxy.SyncConfig();
-				}
-				if (this.m_paramBaseSystem.m_nEffectMode == 1u)
-				{
-					Array.Copy(this.m_faEQBands, this.m_paramMovieMode.m_rpEqualizerBands, this.m_faEQBands.Length);
-					this.m_cpConfigProxy.UpdateParameter(this.m_paramMovieMode);
-					this.m_cpConfigProxy.SyncConfig();
-				}
-				if (this.m_paramBaseSystem.m_nEffectMode == 2u)
-				{
-					Array.Copy(this.m_faEQBands, this.m_paramFreestyle.m_rpEqualizerBands, this.m_faEQBands.Length);
-					this.m_cpConfigProxy.UpdateParameter(this.m_paramFreestyle);
-					this.m_cpConfigProxy.SyncConfig();
-				}
-			}
-			this.UpdateUI();
-		}
 
 		// Token: 0x0600004B RID: 75 RVA: 0x0000589C File Offset: 0x00003A9C
 		private void checkBox_RealtimeAdjust_CheckedChanged(object sender, EventArgs e)
@@ -340,7 +292,7 @@ namespace ViPER4WindowsBin
 		private float[] m_faEQBands = new float[18];
 
 		// Token: 0x04000045 RID: 69
-		private List<VSlider> m_ctlEQBandList = new List<VSlider>();
+		private List<TrackBar> m_ctlEQBandList = new List<TrackBar>();
 
 		// Token: 0x04000046 RID: 70
 		private RuntimeUtils.ConfigProxy._ParamOfBaseSystem m_paramBaseSystem;
@@ -356,5 +308,71 @@ namespace ViPER4WindowsBin
 
 		// Token: 0x0400004A RID: 74
 		private RuntimeUtils.ConfigProxy m_cpConfigProxy;
-	}
+
+
+        private void VSlider1_Scroll(object sender, EventArgs e)
+        {
+            TrackBar myTB;
+            myTB = (TrackBar)sender;
+            EQBandChanged(myTB.Value/5f,myTB);
+        }
+
+        private void SingleButton_Preset_Click(object sender, EventArgs e)
+        {
+            frmEQPreset frmEQPreset = new frmEQPreset();
+            frmEQPreset.SetPreset(this.m_faEQBands);
+            if (frmEQPreset.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+            float[] preset = frmEQPreset.GetPreset();
+            if (preset == null)
+            {
+                return;
+            }
+            if (preset.Length != this.m_faEQBands.Length)
+            {
+                return;
+            }
+            Array.Copy(preset, this.m_faEQBands, this.m_faEQBands.Length);
+            if (this.checkBox_RealtimeAdjust.Checked)
+            {
+                if (this.m_paramBaseSystem.m_nEffectMode == 0u)
+                {
+                    Array.Copy(this.m_faEQBands, this.m_paramMusicMode.m_rpEqualizerBands, this.m_faEQBands.Length);
+                    this.m_cpConfigProxy.UpdateParameter(this.m_paramMusicMode);
+                    this.m_cpConfigProxy.SyncConfig();
+                }
+                if (this.m_paramBaseSystem.m_nEffectMode == 1u)
+                {
+                    Array.Copy(this.m_faEQBands, this.m_paramMovieMode.m_rpEqualizerBands, this.m_faEQBands.Length);
+                    this.m_cpConfigProxy.UpdateParameter(this.m_paramMovieMode);
+                    this.m_cpConfigProxy.SyncConfig();
+                }
+                if (this.m_paramBaseSystem.m_nEffectMode == 2u)
+                {
+                    Array.Copy(this.m_faEQBands, this.m_paramFreestyle.m_rpEqualizerBands, this.m_faEQBands.Length);
+                    this.m_cpConfigProxy.UpdateParameter(this.m_paramFreestyle);
+                    this.m_cpConfigProxy.SyncConfig();
+                }
+            }
+            this.UpdateUI();
+
+        }
+
+        private void SingleButton_OK_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.OK;
+        }
+
+        private void OnOffSwitch_Equalizer_CheckedChanged(object sender, bool isChecked)
+        {
+            EQSwitchChange(isChecked, (MetroSuite.MetroSwitch)sender);
+        }
+
+        private void Label_Equalizer_Enable_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
