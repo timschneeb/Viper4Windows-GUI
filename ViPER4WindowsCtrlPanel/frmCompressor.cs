@@ -255,8 +255,8 @@ namespace ViPER4WindowsBin
 		{
 			this.InitializeComponent();
 			this.Text = GlobalMessages.COMPRESSOR;
-			this.singleButton_OK.ButtonText = GlobalMessages.OK;
-			this.singleButton_Cancel.ButtonText = GlobalMessages.CANCEL;
+			this.singleButton_OK.Text = GlobalMessages.OK;
+			this.singleButton_Cancel.Text = GlobalMessages.CANCEL;
 			this.label_Compressor_Enable.Text = GlobalMessages.ENABLE;
 			this.label_NoClip.Text = GlobalMessages.COMPRESSOR_NOCLIP;
 			this.groupBox_Threshold.Text = GlobalMessages.COMPRESSOR_THRESHOLD;
@@ -279,138 +279,24 @@ namespace ViPER4WindowsBin
 		// Token: 0x06000244 RID: 580 RVA: 0x0001E3D4 File Offset: 0x0001C5D4
 		private void UpdateUI()
 		{
-			this.onOffSwitch_Compressor.SwitchedOn = this.m_bCompressorEnabled;
-			this.onOffSwitch_NoClip.SwitchedOn = this.m_bNoClip;
-			this.onOffSwitch_AutoKnee.SwitchedOn = this.m_bAutoKnee;
-			this.onOffSwitch_AutoAttack.SwitchedOn = this.m_bAutoAttack;
-			this.onOffSwitch_AutoRelease.SwitchedOn = this.m_bAutoRelease;
-			this.onOffSwitch_AutoGain.SwitchedOn = this.m_bAutoGain;
-			this.hSlider_Threshold.Position = (uint)(this.m_rThreshold * 100f);
-			this.hSlider_Knee.Position = (uint)(this.m_rKneewidth * 100f);
-			this.hSlider_Ratio.Position = (uint)(this.m_rRatio * 100f);
-			this.hSlider_Attack.Position = (uint)(this.m_rAttack * 100f);
-			this.hSlider_Release.Position = (uint)(this.m_rRelease * 100f);
-			this.hSlider_KneeMult.Position = (uint)(this.m_rKneeMult * 100f);
-			this.hSlider_Crest.Position = (uint)(this.m_rCrestTime * 100f);
-			this.hSlider_Adapt.Position = (uint)(this.m_rAdaptTime * 100f);
-			this.hSlider_Gain.Position = (uint)(this.m_rMakeupGain * 100f);
+            this.onOffSwitch_Compressor.Checked = this.m_bCompressorEnabled;
+			this.onOffSwitch_NoClip.Checked = this.m_bNoClip;
+			this.onOffSwitch_AutoKnee.Checked = this.m_bAutoKnee;
+			this.onOffSwitch_AutoAttack.Checked = this.m_bAutoAttack;
+			this.onOffSwitch_AutoRelease.Checked = this.m_bAutoRelease;
+			this.onOffSwitch_AutoGain.Checked = this.m_bAutoGain;
+			this.hSlider_Threshold.Value = (int)(this.m_rThreshold*100);
+			this.hSlider_Knee.Value = (int)(this.m_rKneewidth*100 );
+			this.hSlider_Ratio.Value = (int)(this.m_rRatio*100 );
+			this.hSlider_Attack.Value = (int)(this.m_rAttack *100);
+			this.hSlider_Release.Value = (int)(this.m_rRelease*100 );
+			this.hSlider_KneeMult.Value = (int)(this.m_rKneeMult *100);
+			this.hSlider_Crest.Value = (int)(this.m_rCrestTime*100 );
+			this.hSlider_Adapt.Value = (int)(this.m_rAdaptTime*100 );
+			this.hSlider_Gain.Value = (int)(this.m_rMakeupGain *100);
+
 		}
 
-		// Token: 0x06000245 RID: 581 RVA: 0x0001E51F File Offset: 0x0001C71F
-		private void onOffSwitch_Compressor_SwitchChangeNotify(bool bSwitchedOn, OnOffSwitch objSender)
-		{
-			this.m_bCompressorEnabled = bSwitchedOn;
-		}
-
-		// Token: 0x06000246 RID: 582 RVA: 0x0001E528 File Offset: 0x0001C728
-		private void onOffSwitch_NoClip_SwitchChangeNotify(bool bSwitchedOn, OnOffSwitch objSender)
-		{
-			this.m_bNoClip = bSwitchedOn;
-		}
-
-		// Token: 0x06000247 RID: 583 RVA: 0x0001E531 File Offset: 0x0001C731
-		private void onOffSwitch_AutoKnee_SwitchChangeNotify(bool bSwitchedOn, OnOffSwitch objSender)
-		{
-			this.m_bAutoKnee = bSwitchedOn;
-		}
-
-		// Token: 0x06000248 RID: 584 RVA: 0x0001E53A File Offset: 0x0001C73A
-		private void onOffSwitch_AutoAttack_SwitchChangeNotify(bool bSwitchedOn, OnOffSwitch objSender)
-		{
-			this.m_bAutoAttack = bSwitchedOn;
-		}
-
-		// Token: 0x06000249 RID: 585 RVA: 0x0001E543 File Offset: 0x0001C743
-		private void onOffSwitch_AutoRelease_SwitchChangeNotify(bool bSwitchedOn, OnOffSwitch objSender)
-		{
-			this.m_bAutoRelease = bSwitchedOn;
-		}
-
-		// Token: 0x0600024A RID: 586 RVA: 0x0001E54C File Offset: 0x0001C74C
-		private void onOffSwitch_AutoGain_SwitchChangeNotify(bool bSwitchedOn, OnOffSwitch objSender)
-		{
-			this.m_bAutoGain = bSwitchedOn;
-		}
-
-		// Token: 0x0600024B RID: 587 RVA: 0x0001E558 File Offset: 0x0001C758
-		private void hSlider_Threshold_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rThreshold = fPercent;
-			this.label_Threshold.Text = (20.0 * Math.Log10(Math.Pow(10.0, (double)(fPercent * -60f) / 20.0))).ToString("F02") + "dB";
-		}
-
-		// Token: 0x0600024C RID: 588 RVA: 0x0001E5C0 File Offset: 0x0001C7C0
-		private void hSlider_Knee_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rKneewidth = fPercent;
-			this.label_Knee.Text = (20.0 * Math.Log10(Math.Pow(10.0, (double)(fPercent * 60f) / 20.0))).ToString("F02") + "dB";
-		}
-
-		// Token: 0x0600024D RID: 589 RVA: 0x0001E628 File Offset: 0x0001C828
-		private void hSlider_Ratio_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rRatio = fPercent;
-			if (fPercent > 0.99f)
-			{
-				this.label_Ratio.Text = "oo:1";
-				return;
-			}
-			this.label_Ratio.Text = (1.0 / (1.0 - (double)fPercent)).ToString("F02") + ":1";
-		}
-
-		// Token: 0x0600024E RID: 590 RVA: 0x0001E690 File Offset: 0x0001C890
-		private void hSlider_Attack_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rAttack = fPercent;
-			this.label_Attack.Text = ((double)Parameters.PARAM2LOG(fPercent, 0.0001f, 0.2f) * 1000.0).ToString("F02") + "ms";
-		}
-
-		// Token: 0x0600024F RID: 591 RVA: 0x0001E6E4 File Offset: 0x0001C8E4
-		private void hSlider_Release_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rRelease = fPercent;
-			this.label_Release.Text = ((double)Parameters.PARAM2LOG(fPercent, 0.005f, 2f) * 1000.0).ToString("F02") + "ms";
-		}
-
-		// Token: 0x06000250 RID: 592 RVA: 0x0001E738 File Offset: 0x0001C938
-		private void hSlider_KneeMult_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rKneeMult = fPercent;
-			this.label_KneeMultValue.Text = Parameters.PARAM2LIN(fPercent, 0f, 4f).ToString("F02") + "x";
-		}
-
-		// Token: 0x06000251 RID: 593 RVA: 0x0001E780 File Offset: 0x0001C980
-		private void hSlider_Crest_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rCrestTime = fPercent;
-			this.label_CrestValue.Text = ((double)Parameters.PARAM2LOG(fPercent, 0.005f, 2f) * 1000.0).ToString("F02") + "ms";
-		}
-
-		// Token: 0x06000252 RID: 594 RVA: 0x0001E7D4 File Offset: 0x0001C9D4
-		private void hSlider_Adapt_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rAdaptTime = fPercent;
-			this.label_AdaptValue.Text = ((double)Parameters.PARAM2LOG(fPercent, 1f, 4f) * 1000.0).ToString("F02") + "ms";
-		}
-
-		// Token: 0x06000253 RID: 595 RVA: 0x0001E828 File Offset: 0x0001CA28
-		private void hSlider_Gain_PositionChangeNotify(float fPercent, HSlider objSender)
-		{
-			this.m_rMakeupGain = fPercent;
-			this.label_Gain.Text = (20.0 * Math.Log10(Math.Pow(10.0, (double)(fPercent * 60f) / 20.0))).ToString("F02") + "dB";
-		}
-
-		// Token: 0x06000254 RID: 596 RVA: 0x0001E88D File Offset: 0x0001CA8D
-		private void singleButton_OK_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.OK;
-		}
-
-		// Token: 0x06000255 RID: 597 RVA: 0x0001E896 File Offset: 0x0001CA96
-		private void singleButton_Cancel_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.Cancel;
-		}
 
 		// Token: 0x040002A8 RID: 680
 		private bool m_bCompressorEnabled;
@@ -456,5 +342,129 @@ namespace ViPER4WindowsBin
 
 		// Token: 0x040002B6 RID: 694
 		private float m_rAdaptTime = Parameters.LOG2PARAM(2.5f, 1f, 4f);
-	}
+
+        private void OnOffSwitch_NoClip_CheckedChanged(object sender, bool isChecked)
+        {
+            this.m_bNoClip = isChecked;
+        }
+
+        private void OnOffSwitch_Compressor_CheckedChanged(object sender, bool isChecked)
+        {
+            this.m_bCompressorEnabled = isChecked;
+        }
+
+        private void OnOffSwitch_AutoKnee_CheckedChanged(object sender, bool isChecked)
+        {
+            this.m_bAutoKnee = isChecked;
+
+        }
+
+        private void OnOffSwitch_AutoGain_CheckedChanged(object sender, bool isChecked)
+        {
+            this.m_bAutoAttack = isChecked;
+        }
+
+        private void OnOffSwitch_AutoRelease_CheckedChanged(object sender, bool isChecked)
+        {
+            this.m_bAutoRelease = isChecked;
+        }
+
+        private void OnOffSwitch_AutoAttack_CheckedChanged(object sender, bool isChecked)
+        {
+            this.m_bAutoGain = isChecked;
+        }
+
+        private void SingleButton_OK_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.OK;
+        }
+
+        private void SingleButton_Cancel_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.Cancel;
+        }
+
+        private void HSlider_Threshold_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            
+            this.m_rThreshold = e.SliderValue/100f;
+            this.label_Threshold.Text = ((20.0 * Math.Log10(Math.Pow(10.0, (double)(e.SliderValue * -60f) / 20.0))) / 100).ToString("F02") + "dB";
+        }
+
+        private void HSlider_Knee_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            this.m_rKneewidth = e.SliderValue/100f;
+            this.label_Knee.Text = ((20.0 * Math.Log10(Math.Pow(10.0, (double)(e.SliderValue * 60f) / 20.0)))/100).ToString("F02") + "dB";
+        }
+
+        private void HSlider_Ratio_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            float fPercent = e.SliderValue;
+            this.m_rRatio = fPercent/100f;
+            if (fPercent > 99.99f)
+            {
+                this.label_Ratio.Text = "oo:1";
+                return;
+            }
+            this.label_Ratio.Text = (100.0 / (100.0 - (double)fPercent)).ToString("F02") + ":1";
+        }
+
+        private void HSlider_Attack_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            //200
+            this.m_rAttack = e.SliderValue/1000f;
+            this.label_Attack.Text = ((double)Parameters.PARAM2LOG(e.SliderValue/1000f, 0.0001f, 0.2f) * 1000.0).ToString("F02") + "ms";
+
+        }
+
+        private void HSlider_Release_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            //2000
+            this.m_rRelease = e.SliderValue/1000f;
+            this.label_Release.Text = ((double)Parameters.PARAM2LOG(e.SliderValue/1000f, 0.005f, 2f) * 1000.0).ToString("F02") + "ms";
+        }
+
+        private void HSlider_Crest_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            //2000
+            this.m_rCrestTime = e.SliderValue/1000f;
+            this.label_CrestValue.Text = (((double)Parameters.PARAM2LOG(e.SliderValue/1000f, 0.005f, 2f) * 1000.0)).ToString("F02") + "ms";
+        }
+
+        private void HSlider_KneeMult_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            //4
+            this.m_rKneeMult = e.SliderValue/100f;
+            this.label_KneeMultValue.Text = (Parameters.PARAM2LIN(e.SliderValue/100f, 0f, 4f)).ToString("F02") + "x";
+        }
+
+        private void HSlider_Adapt_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+            //4000
+            this.m_rAdaptTime = e.SliderValue/1000f;
+            this.label_AdaptValue.Text = (((double)Parameters.PARAM2LOG(e.SliderValue/1000f, 1f, 4f) * 100.0)).ToString("F02") + "ms";
+        }
+
+        private void HSlider_Gain_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+           this.m_rMakeupGain = e.SliderValue/100f;
+            this.label_Gain.Text = ((20.0 * Math.Log10(Math.Pow(10.0, (double)(e.SliderValue * 60f) / 20.0)))/100).ToString("F02") + "dB";
+
+        }
+
+        private void GroupBox_MakeUpGain_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label_CrestValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label_KneeMult_Click(object sender, EventArgs e)
+        {
+
+        }
+    }  
 }
