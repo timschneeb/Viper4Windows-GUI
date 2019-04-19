@@ -260,6 +260,9 @@
     <EmbeddedResource Include="frmReverbPreset.resx">
       <DependentUpon>frmReverbPreset.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resources" />
     <EmbeddedResource Include="UIControls\ButtonBox.resources" />
     <EmbeddedResource Include="UIControls\EQShape.resources" />

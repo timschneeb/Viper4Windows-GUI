@@ -38,7 +38,7 @@ namespace ViPER4WindowsBin
 		public void SetCloseToTray(bool bValue)
 		{
 			this.m_bCloseToTray = bValue;
-			this.onOffSwitch_CloseToTray.SwitchedOn = this.m_bCloseToTray;
+			this.onOffSwitch_CloseToTray.Checked = this.m_bCloseToTray;
 		}
 
 		// Token: 0x06000274 RID: 628 RVA: 0x0001FA53 File Offset: 0x0001DC53
@@ -89,7 +89,7 @@ namespace ViPER4WindowsBin
 		// Token: 0x06000277 RID: 631 RVA: 0x0001FB68 File Offset: 0x0001DD68
 		public bool GetAPOCoexistEnabled()
 		{
-			return this.onOffSwitch_EnableCoexist.SwitchedOn;
+			return this.onOffSwitch_EnableCoexist.Checked;
 		}
 
 		// Token: 0x06000278 RID: 632 RVA: 0x0001FB78 File Offset: 0x0001DD78
@@ -103,9 +103,9 @@ namespace ViPER4WindowsBin
 			this.listView_TrayMenuSetting.Columns[0].Text = GlobalMessages.TRAY_MENU_PRESETNAME;
 			this.listView_TrayMenuSetting.Columns[1].Text = GlobalMessages.TRAY_MENU_PRESETMODE;
 			this.listView_TrayMenuSetting.Columns[2].Text = GlobalMessages.TRAY_MENU_PRESETFILE;
-			this.singleButton_AddNewItem.ButtonText = GlobalMessages.ADD_NEW_ITEM;
-			this.singleButton_OK.ButtonText = GlobalMessages.OK;
-			this.singleButton_Cancel.ButtonText = GlobalMessages.CANCEL;
+			this.singleButton_AddNewItem.Text = GlobalMessages.ADD_NEW_ITEM;
+			this.singleButton_OK.Text = GlobalMessages.OK;
+			this.singleButton_Cancel.Text = GlobalMessages.CANCEL;
 			this.toolStripMenuItem_RemoveItem.Text = GlobalMessages.REMOVE_ITEM;
 			this.toolStripMenuItem_Name.Text = GlobalMessages.MENU_TIPS_NAME;
 			this.toolStripMenuItem_Mode.Text = GlobalMessages.MENU_TIPS_MODE;
@@ -116,14 +116,14 @@ namespace ViPER4WindowsBin
 			this.toolStripComboBox_Mode.Items.Add(new frmSettings.PresetModeItem(2));
 			this.m_lstTrayMenuPreset.Clear();
 			this.m_bCloseToTray = false;
-			this.onOffSwitch_CloseToTray.SwitchedOn = false;
+			this.onOffSwitch_CloseToTray.Checked = false;
 			this.label_EnableCoexist.Text = GlobalMessages.ENABLE_APO_COEXIST;
 			if (RegHelper.QueryDWORD("LoadChildAPO", 0u) == 1u)
 			{
-				this.onOffSwitch_EnableCoexist.SwitchedOn = true;
+				this.onOffSwitch_EnableCoexist.Checked = true;
 				return;
 			}
-			this.onOffSwitch_EnableCoexist.SwitchedOn = false;
+			this.onOffSwitch_EnableCoexist.Checked = false;
 		}
 
 		// Token: 0x06000279 RID: 633 RVA: 0x0001FD50 File Offset: 0x0001DF50
@@ -146,20 +146,6 @@ namespace ViPER4WindowsBin
 					this.listView_TrayMenuSetting.Items.Add(listViewItem);
 				}
 			}
-		}
-
-		// Token: 0x0600027A RID: 634 RVA: 0x0001FE24 File Offset: 0x0001E024
-		private void onOffSwitch_CloseToTray_SwitchChangeNotify(bool bSwitchedOn, OnOffSwitch objSender)
-		{
-			this.m_bCloseToTray = bSwitchedOn;
-		}
-
-		// Token: 0x0600027B RID: 635 RVA: 0x0001FE30 File Offset: 0x0001E030
-		private void singleButton_AddNewItem_ButtonClickNotify(SingleButton objSender)
-		{
-			TrayMenuPreset item = new TrayMenuPreset(GlobalMessages.UNNAMED, 0, "");
-			this.m_lstTrayMenuPreset.Add(item);
-			this.RefreshList();
 		}
 
 		// Token: 0x0600027C RID: 636 RVA: 0x0001FE60 File Offset: 0x0001E060
@@ -306,18 +292,6 @@ namespace ViPER4WindowsBin
 			this.RefreshList();
 		}
 
-		// Token: 0x06000281 RID: 641 RVA: 0x000202D9 File Offset: 0x0001E4D9
-		private void singleButton_OK_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.OK;
-		}
-
-		// Token: 0x06000282 RID: 642 RVA: 0x000202E2 File Offset: 0x0001E4E2
-		private void singleButton_Cancel_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.Cancel;
-		}
-
 		// Token: 0x040002D6 RID: 726
 		private List<TrayMenuPreset> m_lstTrayMenuPreset = new List<TrayMenuPreset>();
 
@@ -403,5 +377,27 @@ namespace ViPER4WindowsBin
 			// Token: 0x040002F0 RID: 752
 			private int m_nPresetMode = -1;
 		}
-	}
+
+        private void SingleButton_OK_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.OK;
+        }
+
+        private void SingleButton_Cancel_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.Cancel;
+        }
+
+        private void SingleButton_AddNewItem_Click(object sender, EventArgs e)
+        {
+            TrayMenuPreset item = new TrayMenuPreset(GlobalMessages.UNNAMED, 0, "");
+            this.m_lstTrayMenuPreset.Add(item);
+            this.RefreshList();
+        }
+
+        private void OnOffSwitch_CloseToTray_CheckedChanged(object sender, bool isChecked)
+        {
+            this.m_bCloseToTray = isChecked;
+        }
+    }
 }
