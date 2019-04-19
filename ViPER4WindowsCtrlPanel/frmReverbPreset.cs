@@ -134,18 +134,20 @@ namespace ViPER4WindowsBin
 		{
 			this.InitializeComponent();
 			this.Text = GlobalMessages.REVERB_PRESET;
-			this.singleButton_Load.ButtonText = GlobalMessages.LOAD_PRESET;
-			this.singleButton_Cancel.ButtonText = GlobalMessages.CANCEL;
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_LIVINGROOM, "0"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_BATHROOM, "1"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_BATHROOM_BATHING, "2"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_BEDROOM, "3"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_THEATER, "4"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_AUDITORIUM, "5"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_UNDERGROUND_PLAZA, "6"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_UNDERGROUND_PARKING, "7"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.REVERB_PRESET_SCENE_SHOW, "8"));
-			this.buttonBox_Preset.ItemSelectedNotify += this.PresetSelected;
+			this.singleButton_Load.Text = GlobalMessages.LOAD_PRESET;
+			this.singleButton_Cancel.Text = GlobalMessages.CANCEL;
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_LIVINGROOM);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_BATHROOM);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_BATHROOM_BATHING);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_BEDROOM);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_THEATER);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_AUDITORIUM);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_UNDERGROUND_PLAZA);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_UNDERGROUND_PARKING);
+            this.buttonBox_Preset.Items.Add(GlobalMessages.REVERB_PRESET_SCENE_SHOW);
+
+
+
 		}
 
 		// Token: 0x060001A7 RID: 423 RVA: 0x000194BC File Offset: 0x000176BC
@@ -268,73 +270,8 @@ namespace ViPER4WindowsBin
 		// Token: 0x060001B0 RID: 432 RVA: 0x00019864 File Offset: 0x00017A64
 		private void PresetSelected(ButtonBox.Item itPrevItem, ButtonBox.Item itCurrItem, ButtonBox objSender)
 		{
-			if (itCurrItem.Tag == null)
-			{
-				return;
-			}
-			if (!(itCurrItem.Tag is string))
-			{
-				return;
-			}
-			string text = itCurrItem.Tag as string;
-			if (text == "")
-			{
-				return;
-			}
-			int num = -1;
-			if (!int.TryParse(text, out num))
-			{
-				return;
-			}
-			if (num < 0 || num >= 9)
-			{
-				return;
-			}
-			switch (num)
-			{
-			case 0:
-				this.Apply01Preset();
-				return;
-			case 1:
-				this.Apply02Preset();
-				return;
-			case 2:
-				this.Apply03Preset();
-				return;
-			case 3:
-				this.Apply04Preset();
-				return;
-			case 4:
-				this.Apply05Preset();
-				return;
-			case 5:
-				this.Apply06Preset();
-				return;
-			case 6:
-				this.Apply07Preset();
-				return;
-			case 7:
-				this.Apply08Preset();
-				return;
-			case 8:
-				this.Apply09Preset();
-				return;
-			default:
-				return;
-			}
 		}
 
-		// Token: 0x060001B1 RID: 433 RVA: 0x00019924 File Offset: 0x00017B24
-		private void singleButton_Load_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.OK;
-		}
-
-		// Token: 0x060001B2 RID: 434 RVA: 0x0001992D File Offset: 0x00017B2D
-		private void singleButton_Cancel_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.Cancel;
-		}
 
 		// Token: 0x040001A1 RID: 417
 		private float m_rReverbSize;
@@ -359,5 +296,58 @@ namespace ViPER4WindowsBin
 
 		// Token: 0x040001A8 RID: 424
 		private float m_rReverbMix;
-	}
+
+        private void SingleButton_Cancel_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.Cancel;
+        }
+
+        private void SingleButton_Load_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.OK;
+        }
+
+        private void ButtonBox_Preset_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (buttonBox_Preset.SelectedItems.Count != 1) return;
+            int idx = buttonBox_Preset.SelectedItems[0].Index;
+            if (idx < 0 || idx > 10)
+            {
+                return;
+            }
+            switch (idx)
+            {
+                case 0:
+                    this.Apply01Preset();
+                    return;
+                case 1:
+                    this.Apply02Preset();
+                    return;
+                case 2:
+                    this.Apply03Preset();
+                    return;
+                case 3:
+                    this.Apply04Preset();
+                    return;
+                case 4:
+                    this.Apply05Preset();
+                    return;
+                case 5:
+                    this.Apply06Preset();
+                    return;
+                case 6:
+                    this.Apply07Preset();
+                    return;
+                case 7:
+                    this.Apply08Preset();
+                    return;
+                case 8:
+                    this.Apply09Preset();
+                    return;
+                default:
+                    return;
+            }
+
+        }
+    }
 }

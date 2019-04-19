@@ -16,57 +16,91 @@
 		// Token: 0x060001B4 RID: 436 RVA: 0x00019958 File Offset: 0x00017B58
 		private void InitializeComponent()
 		{
-			global::System.ComponentModel.ComponentResourceManager componentResourceManager = new global::System.ComponentModel.ComponentResourceManager(typeof(global::ViPER4WindowsBin.frmReverbPreset));
-			this.singleButton_Cancel = new global::ViPER4WindowsBin.UIControls.SingleButton();
-			this.singleButton_Load = new global::ViPER4WindowsBin.UIControls.SingleButton();
-			this.buttonBox_Preset = new global::ViPER4WindowsBin.UIControls.ButtonBox();
-			base.SuspendLayout();
-			this.singleButton_Cancel.BackColor = global::System.Drawing.SystemColors.Control;
-			this.singleButton_Cancel.ButtonText = "$CANCEL";
-			this.singleButton_Cancel.Location = new global::System.Drawing.Point(193, 303);
-			this.singleButton_Cancel.Name = "singleButton_Cancel";
-			this.singleButton_Cancel.Size = new global::System.Drawing.Size(112, 40);
-			this.singleButton_Cancel.TabIndex = 5;
-			this.singleButton_Cancel.ButtonClickNotify += new global::ViPER4WindowsBin.UIControls.SingleButton.ButtonClickEventDelegate(this.singleButton_Cancel_ButtonClickNotify);
-			this.singleButton_Load.BackColor = global::System.Drawing.SystemColors.Control;
-			this.singleButton_Load.ButtonText = "$LOAD_PRESET";
-			this.singleButton_Load.Location = new global::System.Drawing.Point(193, 12);
-			this.singleButton_Load.Name = "singleButton_Load";
-			this.singleButton_Load.Size = new global::System.Drawing.Size(112, 40);
-			this.singleButton_Load.TabIndex = 4;
-			this.singleButton_Load.ButtonClickNotify += new global::ViPER4WindowsBin.UIControls.SingleButton.ButtonClickEventDelegate(this.singleButton_Load_ButtonClickNotify);
-			this.buttonBox_Preset.BackColor = global::System.Drawing.SystemColors.Control;
-			this.buttonBox_Preset.Location = new global::System.Drawing.Point(12, 12);
-			this.buttonBox_Preset.Name = "buttonBox_Preset";
-			this.buttonBox_Preset.Size = new global::System.Drawing.Size(175, 331);
-			this.buttonBox_Preset.TabIndex = 3;
-			base.AutoScaleDimensions = new global::System.Drawing.SizeF(6f, 12f);
-			base.AutoScaleMode = global::System.Windows.Forms.AutoScaleMode.Font;
-			base.ClientSize = new global::System.Drawing.Size(318, 355);
-			base.Controls.Add(this.singleButton_Cancel);
-			base.Controls.Add(this.singleButton_Load);
-			base.Controls.Add(this.buttonBox_Preset);
-			this.DoubleBuffered = true;
-			base.FormBorderStyle = global::System.Windows.Forms.FormBorderStyle.FixedSingle;
-			base.MaximizeBox = false;
-			base.MinimizeBox = false;
-			base.Name = "frmReverbPreset";
-			base.ShowInTaskbar = false;
-			base.StartPosition = global::System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "$REVERB_PRESET";
-			base.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("798798");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("utit");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("6789798");
+            this.singleButton_Load = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.singleButton_Cancel = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
+            this.buttonBox_Preset = new System.Windows.Forms.ListView();
+            this.SuspendLayout();
+            // 
+            // singleButton_Load
+            // 
+            this.singleButton_Load.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
+            this.singleButton_Load.BeforeTouchSize = new System.Drawing.Size(112, 28);
+            this.singleButton_Load.IsBackStageButton = false;
+            this.singleButton_Load.Location = new System.Drawing.Point(123, 260);
+            this.singleButton_Load.Name = "singleButton_Load";
+            this.singleButton_Load.Office2007ColorScheme = Syncfusion.Windows.Forms.Office2007Theme.Managed;
+            this.singleButton_Load.Size = new System.Drawing.Size(112, 28);
+            this.singleButton_Load.TabIndex = 6;
+            this.singleButton_Load.Text = "$LOAD_PRESET";
+            this.singleButton_Load.ThemeName = "Office2016Colorful";
+            this.singleButton_Load.UseVisualStyle = true;
+            this.singleButton_Load.Click += new System.EventHandler(this.SingleButton_Load_Click);
+            // 
+            // singleButton_Cancel
+            // 
+            this.singleButton_Cancel.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
+            this.singleButton_Cancel.BeforeTouchSize = new System.Drawing.Size(112, 28);
+            this.singleButton_Cancel.IsBackStageButton = false;
+            this.singleButton_Cancel.Location = new System.Drawing.Point(5, 260);
+            this.singleButton_Cancel.Name = "singleButton_Cancel";
+            this.singleButton_Cancel.Office2007ColorScheme = Syncfusion.Windows.Forms.Office2007Theme.Managed;
+            this.singleButton_Cancel.Size = new System.Drawing.Size(112, 28);
+            this.singleButton_Cancel.TabIndex = 7;
+            this.singleButton_Cancel.Text = "$CANCEL";
+            this.singleButton_Cancel.ThemeName = "Office2016Colorful";
+            this.singleButton_Cancel.UseVisualStyle = true;
+            this.singleButton_Cancel.Click += new System.EventHandler(this.SingleButton_Cancel_Click);
+            // 
+            // skinManager1
+            // 
+            this.skinManager1.Controls = this;
+            this.skinManager1.VisualTheme = Syncfusion.Windows.Forms.VisualTheme.Office2016Colorful;
+            // 
+            // buttonBox_Preset
+            // 
+            this.buttonBox_Preset.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
+            this.buttonBox_Preset.Location = new System.Drawing.Point(5, 5);
+            this.buttonBox_Preset.MultiSelect = false;
+            this.buttonBox_Preset.Name = "buttonBox_Preset";
+            this.buttonBox_Preset.Size = new System.Drawing.Size(230, 249);
+            this.buttonBox_Preset.TabIndex = 12;
+            this.buttonBox_Preset.UseCompatibleStateImageBehavior = false;
+            this.buttonBox_Preset.View = System.Windows.Forms.View.List;
+            this.buttonBox_Preset.SelectedIndexChanged += new System.EventHandler(this.ButtonBox_Preset_SelectedIndexChanged);
+            // 
+            // frmReverbPreset
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(240, 299);
+            this.Controls.Add(this.buttonBox_Preset);
+            this.Controls.Add(this.singleButton_Cancel);
+            this.Controls.Add(this.singleButton_Load);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmReverbPreset";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "$REVERB_PRESET";
+            this.ResumeLayout(false);
+
 		}
 
 		// Token: 0x040001A9 RID: 425
 		private global::System.ComponentModel.IContainer components;
-
-		// Token: 0x040001AA RID: 426
-		private global::ViPER4WindowsBin.UIControls.SingleButton singleButton_Cancel;
-
-		// Token: 0x040001AB RID: 427
-		private global::ViPER4WindowsBin.UIControls.SingleButton singleButton_Load;
-
-		// Token: 0x040001AC RID: 428
-		private global::ViPER4WindowsBin.UIControls.ButtonBox buttonBox_Preset;
-	}
+        private Syncfusion.Windows.Forms.ButtonAdv singleButton_Load;
+        private Syncfusion.Windows.Forms.ButtonAdv singleButton_Cancel;
+        private Syncfusion.Windows.Forms.SkinManager skinManager1;
+        private System.Windows.Forms.ListView buttonBox_Preset;
+    }
 }

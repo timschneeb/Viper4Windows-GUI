@@ -34,7 +34,7 @@
             this.singleButton_Load.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_Load.BeforeTouchSize = new System.Drawing.Size(112, 28);
             this.singleButton_Load.IsBackStageButton = false;
-            this.singleButton_Load.Location = new System.Drawing.Point(203, 344);
+            this.singleButton_Load.Location = new System.Drawing.Point(123, 260);
             this.singleButton_Load.Name = "singleButton_Load";
             this.singleButton_Load.Size = new System.Drawing.Size(112, 28);
             this.singleButton_Load.TabIndex = 8;
@@ -48,7 +48,7 @@
             this.singleButton_Cancel.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_Cancel.BeforeTouchSize = new System.Drawing.Size(112, 28);
             this.singleButton_Cancel.IsBackStageButton = false;
-            this.singleButton_Cancel.Location = new System.Drawing.Point(85, 344);
+            this.singleButton_Cancel.Location = new System.Drawing.Point(5, 260);
             this.singleButton_Cancel.Name = "singleButton_Cancel";
             this.singleButton_Cancel.Size = new System.Drawing.Size(112, 28);
             this.singleButton_Cancel.TabIndex = 9;
@@ -67,10 +67,10 @@
             // 
             // buttonBox_Preset
             // 
-            this.buttonBox_Preset.Location = new System.Drawing.Point(5, 19);
+            this.buttonBox_Preset.Location = new System.Drawing.Point(5, 5);
             this.buttonBox_Preset.MultiSelect = false;
             this.buttonBox_Preset.Name = "buttonBox_Preset";
-            this.buttonBox_Preset.Size = new System.Drawing.Size(308, 319);
+            this.buttonBox_Preset.Size = new System.Drawing.Size(230, 249);
             this.buttonBox_Preset.TabIndex = 11;
             this.buttonBox_Preset.UseCompatibleStateImageBehavior = false;
             this.buttonBox_Preset.View = System.Windows.Forms.View.Tile;
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 385);
+            this.ClientSize = new System.Drawing.Size(241, 299);
             this.Controls.Add(this.buttonBox_Preset);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.singleButton_Cancel);
