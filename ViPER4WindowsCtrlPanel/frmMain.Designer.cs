@@ -82,10 +82,9 @@
             this.Freestyle_buttonBox_SurroundVHERoomSize = new System.Windows.Forms.ListBox();
             this.Freestyle_onOffSwitch_SurroundVHE = new MetroSuite.MetroSwitch();
             this.Freestyle_groupBox_Convolver = new System.Windows.Forms.GroupBox();
-            this.Freestyle_irShape_ConvIR = new ViPER4WindowsBin.UIControls.IRShape();
             this.Freestyle_onOffSwitch_Convolver = new MetroSuite.MetroSwitch();
             this.Freestyle_hSlider_ConvIRGain = new MetroSuite.MetroTrackbar();
-            this.Freestyle_openFileBox_ConvIRS = new ViPER4WindowsBin.UIControls.OpenFileBox();
+            this.Freestyle_openFileBox_ConvIRS = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.Freestyle_label_ConvolverIRGain = new System.Windows.Forms.Label();
             this.Freestyle_hSlider_PostVolume = new MetroSuite.MetroTrackbar();
             this.Freestyle_label_PostVolume = new System.Windows.Forms.Label();
@@ -100,6 +99,9 @@
             this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
             this.Freestyle_singleButton_Compressor = new Syncfusion.Windows.Forms.ButtonAdv();
             this.Freestyle_singleButton_Equalizer = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openIRS = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.Freestyle_irShape_ConvIR = new ViPER4WindowsBin.UIControls.IRShape();
             this.menuStrip_Main.SuspendLayout();
             this.groupBox_Main.SuspendLayout();
             this.panel_Freestyle.SuspendLayout();
@@ -111,6 +113,7 @@
             this.Freestyle_groupBox_Bass.SuspendLayout();
             this.Freestyle_groupBox_VHESurround.SuspendLayout();
             this.Freestyle_groupBox_Convolver.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Freestyle_openFileBox_ConvIRS)).BeginInit();
             this.SuspendLayout();
             // 
             // label_MasterPower
@@ -946,6 +949,7 @@
             // 
             // Freestyle_groupBox_Convolver
             // 
+            this.Freestyle_groupBox_Convolver.Controls.Add(this.openIRS);
             this.Freestyle_groupBox_Convolver.Controls.Add(this.Freestyle_irShape_ConvIR);
             this.Freestyle_groupBox_Convolver.Controls.Add(this.Freestyle_onOffSwitch_Convolver);
             this.Freestyle_groupBox_Convolver.Controls.Add(this.Freestyle_hSlider_ConvIRGain);
@@ -957,15 +961,6 @@
             this.Freestyle_groupBox_Convolver.TabIndex = 12;
             this.Freestyle_groupBox_Convolver.TabStop = false;
             this.Freestyle_groupBox_Convolver.Text = "$CONVOLVER";
-            // 
-            // Freestyle_irShape_ConvIR
-            // 
-            this.Freestyle_irShape_ConvIR.Location = new System.Drawing.Point(13, 66);
-            this.Freestyle_irShape_ConvIR.Name = "Freestyle_irShape_ConvIR";
-            this.Freestyle_irShape_ConvIR.ShapeBackColor = System.Drawing.Color.White;
-            this.Freestyle_irShape_ConvIR.ShapeForeColor = System.Drawing.Color.Black;
-            this.Freestyle_irShape_ConvIR.Size = new System.Drawing.Size(209, 68);
-            this.Freestyle_irShape_ConvIR.TabIndex = 8;
             // 
             // Freestyle_onOffSwitch_Convolver
             // 
@@ -1003,13 +998,19 @@
             // 
             // Freestyle_openFileBox_ConvIRS
             // 
-            this.Freestyle_openFileBox_ConvIRS.BackColor = System.Drawing.SystemColors.Control;
-            this.Freestyle_openFileBox_ConvIRS.FilePathName = "";
+            this.Freestyle_openFileBox_ConvIRS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Freestyle_openFileBox_ConvIRS.BeforeTouchSize = new System.Drawing.Size(174, 20);
+            this.Freestyle_openFileBox_ConvIRS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.Freestyle_openFileBox_ConvIRS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Freestyle_openFileBox_ConvIRS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.Freestyle_openFileBox_ConvIRS.Location = new System.Drawing.Point(13, 147);
+            this.Freestyle_openFileBox_ConvIRS.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.Freestyle_openFileBox_ConvIRS.Name = "Freestyle_openFileBox_ConvIRS";
-            this.Freestyle_openFileBox_ConvIRS.Size = new System.Drawing.Size(209, 31);
+            this.Freestyle_openFileBox_ConvIRS.Size = new System.Drawing.Size(174, 20);
+            this.Freestyle_openFileBox_ConvIRS.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016Colorful;
             this.Freestyle_openFileBox_ConvIRS.TabIndex = 9;
-            this.Freestyle_openFileBox_ConvIRS.FileChangeNotify += new ViPER4WindowsBin.UIControls.OpenFileBox.FileChangeEventDelegate(this.Freestyle_openFileBox_ConvIRS_FileChangeNotify);
+            this.Freestyle_openFileBox_ConvIRS.ThemeName = "Office2016Colorful";
+            this.Freestyle_openFileBox_ConvIRS.TextChanged += new System.EventHandler(this.Freestyle_openFileBox_ConvIRS_TextChanged);
             // 
             // Freestyle_label_ConvolverIRGain
             // 
@@ -1182,6 +1183,36 @@
             this.Freestyle_singleButton_Equalizer.UseVisualStyle = true;
             this.Freestyle_singleButton_Equalizer.Click += new System.EventHandler(this.Freestyle_singleButton_Equalizer_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "irs";
+            this.openFileDialog1.Filter = "IR-Samples|*.irs;*.wav|All Files|*.*";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog1_FileOk);
+            // 
+            // openIRS
+            // 
+            this.openIRS.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
+            this.openIRS.BackColor = System.Drawing.SystemColors.Control;
+            this.openIRS.BeforeTouchSize = new System.Drawing.Size(29, 20);
+            this.openIRS.IsBackStageButton = false;
+            this.openIRS.Location = new System.Drawing.Point(193, 147);
+            this.openIRS.Name = "openIRS";
+            this.openIRS.Size = new System.Drawing.Size(29, 20);
+            this.openIRS.TabIndex = 22;
+            this.openIRS.Text = "...";
+            this.openIRS.ThemeName = "Office2016Colorful";
+            this.openIRS.UseVisualStyle = true;
+            this.openIRS.Click += new System.EventHandler(this.OpenIRS_Click);
+            // 
+            // Freestyle_irShape_ConvIR
+            // 
+            this.Freestyle_irShape_ConvIR.Location = new System.Drawing.Point(13, 66);
+            this.Freestyle_irShape_ConvIR.Name = "Freestyle_irShape_ConvIR";
+            this.Freestyle_irShape_ConvIR.ShapeBackColor = System.Drawing.Color.White;
+            this.Freestyle_irShape_ConvIR.ShapeForeColor = System.Drawing.Color.Black;
+            this.Freestyle_irShape_ConvIR.Size = new System.Drawing.Size(209, 68);
+            this.Freestyle_irShape_ConvIR.TabIndex = 8;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1226,6 +1257,7 @@
             this.Freestyle_groupBox_VHESurround.ResumeLayout(false);
             this.Freestyle_groupBox_Convolver.ResumeLayout(false);
             this.Freestyle_groupBox_Convolver.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Freestyle_openFileBox_ConvIRS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1399,7 +1431,7 @@
         private global::MetroSuite.MetroTrackbar Freestyle_hSlider_ConvIRGain;
 
         // Token: 0x04000157 RID: 343
-        private global::ViPER4WindowsBin.UIControls.OpenFileBox Freestyle_openFileBox_ConvIRS;
+        private global::Syncfusion.Windows.Forms.Tools.TextBoxExt Freestyle_openFileBox_ConvIRS;
 
         // Token: 0x04000158 RID: 344
         private global::System.Windows.Forms.Label Freestyle_label_ConvolverIRGain;
@@ -1476,5 +1508,7 @@
         private MetroSuite.MetroSwitch onOffSwitch_Master;
         private Syncfusion.Windows.Forms.ButtonAdv savePreset;
         private Syncfusion.Windows.Forms.SkinManager skinManager1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Syncfusion.Windows.Forms.ButtonAdv openIRS;
     }
 }

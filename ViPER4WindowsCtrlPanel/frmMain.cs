@@ -206,7 +206,7 @@ namespace ViPER4WindowsBin
             this.label_Copyright.Text = GlobalMessages.COPYRIGHT;
             if (Directory.Exists(this.m_szIRSPath))
             {
-                this.Freestyle_openFileBox_ConvIRS.OpenDirectory = this.m_szIRSPath;
+                this.openFileDialog1.InitialDirectory = this.m_szIRSPath;
             }
             this.Freestyle_groupBox_3DSurround.Text = GlobalMessages.THREE_D_SURROUND;
             this.Freestyle_label_Surround_3D.Text = GlobalMessages.SURROUND_3D;
@@ -889,7 +889,7 @@ namespace ViPER4WindowsBin
             {
                 this.Freestyle_onOffSwitch_Convolver.Checked = true;
             }
-            this.Freestyle_openFileBox_ConvIRS.FilePathName = RuntimeUtils.GeneralUtils.CharArrayToString(this.m_paramFreestyle.m_szConvolverIR);
+            this.Freestyle_openFileBox_ConvIRS.Text = RuntimeUtils.GeneralUtils.CharArrayToString(this.m_paramFreestyle.m_szConvolverIR);
             this.Freestyle_hSlider_ConvIRGain.Value = (int)(this.m_paramFreestyle.m_rConvolverIRGain * 100);
             if (this.m_paramFreestyle.m_b3DSurroundEnabled == 0)
             {
@@ -1095,19 +1095,7 @@ namespace ViPER4WindowsBin
             }
         }
 
-   
-
-        // Token: 0x060000E2 RID: 226 RVA: 0x0000C1F8 File Offset: 0x0000A3F8
-        private void Freestyle_openFileBox_ConvIRS_FileChangeNotify(string szFilePathName, OpenFileBox objSender)
-        {
-            this.m_paramFreestyle.m_szConvolverIR = Parameters.WriteStringToArray260(szFilePathName);
-            int nChannels = 0;
-            float[] fIRSamples = RuntimeUtils.ImpulseResponseUtils.EstimateImpulseResponseSample(szFilePathName, out nChannels);
-            this.Freestyle_irShape_ConvIR.SetImpulseResponse(fIRSamples, nChannels);
-            this.m_cpConfigProxy.UpdateParameter(this.m_paramFreestyle);
-            this.m_cpConfigProxy.SyncConfig();
-        }
-
+  
 
         // Token: 0x0400009C RID: 156
         private static string m_szLanguagePath = "";
@@ -1820,6 +1808,30 @@ namespace ViPER4WindowsBin
             this.m_paramFreestyle.m_rReverbMix = fPercent;
             this.m_cpConfigProxy.UpdateParameter(this.m_paramFreestyle);
             this.m_cpConfigProxy.SyncConfig();
+        }
+
+        private void Freestyle_openFileBox_ConvIRS_TextChanged(object sender, EventArgs e)
+        {
+            TextBox t = (TextBox)sender;
+            this.m_paramFreestyle.m_szConvolverIR = Parameters.WriteStringToArray260(t.Text);
+            int nChannels = 0;
+            float[] fIRSamples = RuntimeUtils.ImpulseResponseUtils.EstimateImpulseResponseSample(t.Text, out nChannels);
+            this.Freestyle_irShape_ConvIR.SetImpulseResponse(fIRSamples, nChannels);
+            this.m_cpConfigProxy.UpdateParameter(this.m_paramFreestyle);
+            this.m_cpConfigProxy.SyncConfig();
+        }
+
+        private void OpenIRS_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Freestyle_openFileBox_ConvIRS.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void OpenFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
