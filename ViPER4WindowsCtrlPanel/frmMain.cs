@@ -203,7 +203,6 @@ namespace ViPER4WindowsBin
             this.Freestyle_singleButton_ReverbPreset.Text = GlobalMessages.REVERB_PRESET;
 
             this.label_MasterPower.Text = GlobalMessages.MASTER_POWER;
-            this.label_Copyright.Text = GlobalMessages.COPYRIGHT;
             if (Directory.Exists(this.m_szIRSPath))
             {
                 this.openFileDialog1.InitialDirectory = this.m_szIRSPath;
@@ -260,9 +259,6 @@ namespace ViPER4WindowsBin
                 toolStripItem.Click += this.LanguageChanged;
                 this.toolStripMenuItem_Language.DropDownItems.Add(toolStripItem);
             }
-            this.groupBox_Main.Controls.Clear();
-            this.groupBox_Main.Controls.Add(this.panel_Freestyle);
-            this.panel_Freestyle.Dock = DockStyle.Fill;
             this.UpdateAllControlsFromParameters();
             if (szArgs == null)
             {
@@ -1830,6 +1826,18 @@ namespace ViPER4WindowsBin
         }
 
         private void OpenFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void Freestyle_label_Tube_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void Freestyle_groupBox_VHESurround_Enter(object sender, EventArgs e)
         {
 
         }

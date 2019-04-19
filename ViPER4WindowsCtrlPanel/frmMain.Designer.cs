@@ -26,8 +26,6 @@
             this.toolStripMenuItem_Virtualization = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_ResetEffect = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_Settings = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox_Main = new System.Windows.Forms.GroupBox();
-            this.panel_Freestyle = new System.Windows.Forms.Panel();
             this.Freestyle_groupBox_SmartVolume = new System.Windows.Forms.GroupBox();
             this.Freestyle_hSlider_SmartVolumeLevel = new MetroSuite.MetroTrackbar();
             this.Freestyle_label_SmartVolume_Level = new System.Windows.Forms.Label();
@@ -90,7 +88,6 @@
             this.Freestyle_label_PostVolume = new System.Windows.Forms.Label();
             this.Freestyle_hSlider_PreVolume = new MetroSuite.MetroTrackbar();
             this.Freestyle_label_PreVolume = new System.Windows.Forms.Label();
-            this.label_Copyright = new System.Windows.Forms.Label();
             this.notifyIcon_Main = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip_TrayMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.loadPreset = new Syncfusion.Windows.Forms.ButtonAdv();
@@ -102,9 +99,11 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openIRS = new Syncfusion.Windows.Forms.ButtonAdv();
             this.Freestyle_irShape_ConvIR = new ViPER4WindowsBin.UIControls.IRShape();
+            this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
+            this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabPageAdv3 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.menuStrip_Main.SuspendLayout();
-            this.groupBox_Main.SuspendLayout();
-            this.panel_Freestyle.SuspendLayout();
             this.Freestyle_groupBox_SmartVolume.SuspendLayout();
             this.Freestyle_groupBox_3DSurround.SuspendLayout();
             this.Freestyle_groupBox_Reverb.SuspendLayout();
@@ -114,6 +113,11 @@
             this.Freestyle_groupBox_VHESurround.SuspendLayout();
             this.Freestyle_groupBox_Convolver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Freestyle_openFileBox_ConvIRS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
+            this.tabControlAdv1.SuspendLayout();
+            this.tabPageAdv1.SuspendLayout();
+            this.tabPageAdv2.SuspendLayout();
+            this.tabPageAdv3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_MasterPower
@@ -133,7 +137,7 @@
             this.toolStripMenuItem_Setting});
             this.menuStrip_Main.Location = new System.Drawing.Point(2, 2);
             this.menuStrip_Main.Name = "menuStrip_Main";
-            this.menuStrip_Main.Size = new System.Drawing.Size(1038, 24);
+            this.menuStrip_Main.Size = new System.Drawing.Size(622, 24);
             this.menuStrip_Main.TabIndex = 4;
             // 
             // toolStripMenuItem_Language
@@ -189,35 +193,6 @@
             this.toolStripMenuItem_Settings.Text = "$SETTINGS";
             this.toolStripMenuItem_Settings.Click += new System.EventHandler(this.toolStripMenuItem_Settings_Click);
             // 
-            // groupBox_Main
-            // 
-            this.groupBox_Main.Controls.Add(this.panel_Freestyle);
-            this.groupBox_Main.Location = new System.Drawing.Point(186, 30);
-            this.groupBox_Main.Name = "groupBox_Main";
-            this.groupBox_Main.Size = new System.Drawing.Size(841, 620);
-            this.groupBox_Main.TabIndex = 5;
-            this.groupBox_Main.TabStop = false;
-            // 
-            // panel_Freestyle
-            // 
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_SmartVolume);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_3DSurround);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_Reverb);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_Cure);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_Clarity);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_Bass);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_VHESurround);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_groupBox_Convolver);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_hSlider_PostVolume);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_label_PostVolume);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_hSlider_PreVolume);
-            this.panel_Freestyle.Controls.Add(this.Freestyle_label_PreVolume);
-            this.panel_Freestyle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Freestyle.Location = new System.Drawing.Point(3, 16);
-            this.panel_Freestyle.Name = "panel_Freestyle";
-            this.panel_Freestyle.Size = new System.Drawing.Size(835, 601);
-            this.panel_Freestyle.TabIndex = 10;
-            // 
             // Freestyle_groupBox_SmartVolume
             // 
             this.Freestyle_groupBox_SmartVolume.Controls.Add(this.Freestyle_hSlider_SmartVolumeLevel);
@@ -227,7 +202,7 @@
             this.Freestyle_groupBox_SmartVolume.Controls.Add(this.Freestyle_hSlider_SmartVolumeRatio);
             this.Freestyle_groupBox_SmartVolume.Controls.Add(this.Freestyle_label_SmartVolume_ControlStrength);
             this.Freestyle_groupBox_SmartVolume.Controls.Add(this.Freestyle_onOffSwitch_SmartVolume);
-            this.Freestyle_groupBox_SmartVolume.Location = new System.Drawing.Point(216, 424);
+            this.Freestyle_groupBox_SmartVolume.Location = new System.Drawing.Point(21, 169);
             this.Freestyle_groupBox_SmartVolume.Name = "Freestyle_groupBox_SmartVolume";
             this.Freestyle_groupBox_SmartVolume.Size = new System.Drawing.Size(384, 160);
             this.Freestyle_groupBox_SmartVolume.TabIndex = 23;
@@ -255,7 +230,7 @@
             // Freestyle_label_SmartVolume_Level
             // 
             this.Freestyle_label_SmartVolume_Level.AutoSize = true;
-            this.Freestyle_label_SmartVolume_Level.Location = new System.Drawing.Point(214, 73);
+            this.Freestyle_label_SmartVolume_Level.Location = new System.Drawing.Point(209, 76);
             this.Freestyle_label_SmartVolume_Level.Name = "Freestyle_label_SmartVolume_Level";
             this.Freestyle_label_SmartVolume_Level.Size = new System.Drawing.Size(169, 13);
             this.Freestyle_label_SmartVolume_Level.TabIndex = 22;
@@ -282,7 +257,7 @@
             // Freestyle_label_SmartVolume_MaxLevel
             // 
             this.Freestyle_label_SmartVolume_MaxLevel.AutoSize = true;
-            this.Freestyle_label_SmartVolume_MaxLevel.Location = new System.Drawing.Point(19, 108);
+            this.Freestyle_label_SmartVolume_MaxLevel.Location = new System.Drawing.Point(6, 108);
             this.Freestyle_label_SmartVolume_MaxLevel.Name = "Freestyle_label_SmartVolume_MaxLevel";
             this.Freestyle_label_SmartVolume_MaxLevel.Size = new System.Drawing.Size(184, 13);
             this.Freestyle_label_SmartVolume_MaxLevel.TabIndex = 20;
@@ -309,7 +284,7 @@
             // Freestyle_label_SmartVolume_ControlStrength
             // 
             this.Freestyle_label_SmartVolume_ControlStrength.AutoSize = true;
-            this.Freestyle_label_SmartVolume_ControlStrength.Location = new System.Drawing.Point(19, 63);
+            this.Freestyle_label_SmartVolume_ControlStrength.Location = new System.Drawing.Point(6, 63);
             this.Freestyle_label_SmartVolume_ControlStrength.Name = "Freestyle_label_SmartVolume_ControlStrength";
             this.Freestyle_label_SmartVolume_ControlStrength.Size = new System.Drawing.Size(226, 13);
             this.Freestyle_label_SmartVolume_ControlStrength.TabIndex = 18;
@@ -324,9 +299,9 @@
             this.Freestyle_onOffSwitch_SmartVolume.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_SmartVolume.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_SmartVolume.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_SmartVolume.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_SmartVolume.Location = new System.Drawing.Point(9, 26);
             this.Freestyle_onOffSwitch_SmartVolume.Name = "Freestyle_onOffSwitch_SmartVolume";
-            this.Freestyle_onOffSwitch_SmartVolume.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_SmartVolume.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_SmartVolume.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_SmartVolume.TabIndex = 17;
             this.Freestyle_onOffSwitch_SmartVolume.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_SmartVolume_CheckedChanged);
@@ -338,9 +313,9 @@
             this.Freestyle_groupBox_3DSurround.Controls.Add(this.Freestyle_hSlider_Surround3D);
             this.Freestyle_groupBox_3DSurround.Controls.Add(this.Freestyle_label_Surround_3D);
             this.Freestyle_groupBox_3DSurround.Controls.Add(this.Freestyle_onOffSwitch_Surround3D);
-            this.Freestyle_groupBox_3DSurround.Location = new System.Drawing.Point(476, 7);
+            this.Freestyle_groupBox_3DSurround.Location = new System.Drawing.Point(14, 272);
             this.Freestyle_groupBox_3DSurround.Name = "Freestyle_groupBox_3DSurround";
-            this.Freestyle_groupBox_3DSurround.Size = new System.Drawing.Size(121, 194);
+            this.Freestyle_groupBox_3DSurround.Size = new System.Drawing.Size(195, 124);
             this.Freestyle_groupBox_3DSurround.TabIndex = 22;
             this.Freestyle_groupBox_3DSurround.TabStop = false;
             this.Freestyle_groupBox_3DSurround.Text = "$3D_SURROUND";
@@ -353,7 +328,7 @@
             this.Freestyle_hSlider_SurroundImage.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_SurroundImage.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_SurroundImage.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_SurroundImage.Location = new System.Drawing.Point(6, 137);
+            this.Freestyle_hSlider_SurroundImage.Location = new System.Drawing.Point(70, 86);
             this.Freestyle_hSlider_SurroundImage.Name = "Freestyle_hSlider_SurroundImage";
             this.Freestyle_hSlider_SurroundImage.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_SurroundImage.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -366,7 +341,7 @@
             // Freestyle_label_Surround_Image
             // 
             this.Freestyle_label_Surround_Image.AutoSize = true;
-            this.Freestyle_label_Surround_Image.Location = new System.Drawing.Point(16, 120);
+            this.Freestyle_label_Surround_Image.Location = new System.Drawing.Point(71, 69);
             this.Freestyle_label_Surround_Image.Name = "Freestyle_label_Surround_Image";
             this.Freestyle_label_Surround_Image.Size = new System.Drawing.Size(116, 13);
             this.Freestyle_label_Surround_Image.TabIndex = 24;
@@ -380,7 +355,7 @@
             this.Freestyle_hSlider_Surround3D.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_Surround3D.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_Surround3D.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_Surround3D.Location = new System.Drawing.Point(6, 91);
+            this.Freestyle_hSlider_Surround3D.Location = new System.Drawing.Point(70, 40);
             this.Freestyle_hSlider_Surround3D.Name = "Freestyle_hSlider_Surround3D";
             this.Freestyle_hSlider_Surround3D.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_Surround3D.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -393,7 +368,7 @@
             // Freestyle_label_Surround_3D
             // 
             this.Freestyle_label_Surround_3D.AutoSize = true;
-            this.Freestyle_label_Surround_3D.Location = new System.Drawing.Point(16, 75);
+            this.Freestyle_label_Surround_3D.Location = new System.Drawing.Point(71, 24);
             this.Freestyle_label_Surround_3D.Name = "Freestyle_label_Surround_3D";
             this.Freestyle_label_Surround_3D.Size = new System.Drawing.Size(96, 13);
             this.Freestyle_label_Surround_3D.TabIndex = 22;
@@ -408,36 +383,36 @@
             this.Freestyle_onOffSwitch_Surround3D.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_Surround3D.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_Surround3D.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_Surround3D.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_Surround3D.Location = new System.Drawing.Point(23, 24);
             this.Freestyle_onOffSwitch_Surround3D.Name = "Freestyle_onOffSwitch_Surround3D";
-            this.Freestyle_onOffSwitch_Surround3D.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_Surround3D.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_Surround3D.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_Surround3D.TabIndex = 6;
             this.Freestyle_onOffSwitch_Surround3D.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_Surround3D_CheckedChanged);
             // 
             // Freestyle_groupBox_Reverb
             // 
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_singleButton_ReverbPreset);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbMix);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Mix);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbEarlyMix);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_EarlyMix);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbPreDelay);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_PreDelay);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbDecay);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Decay);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_singleButton_ReverbPreset);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbBandWidth);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_BandWidth);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Mix);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbDensity);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Density);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbEarlyMix);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbDamping);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Damping);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbSize);
-            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Size);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_EarlyMix);
             this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_onOffSwitch_Reverb);
-            this.Freestyle_groupBox_Reverb.Location = new System.Drawing.Point(606, 163);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbSize);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbPreDelay);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Size);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_PreDelay);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_label_Reverb_Decay);
+            this.Freestyle_groupBox_Reverb.Controls.Add(this.Freestyle_hSlider_ReverbDecay);
+            this.Freestyle_groupBox_Reverb.Location = new System.Drawing.Point(14, 10);
             this.Freestyle_groupBox_Reverb.Name = "Freestyle_groupBox_Reverb";
-            this.Freestyle_groupBox_Reverb.Size = new System.Drawing.Size(208, 421);
+            this.Freestyle_groupBox_Reverb.Size = new System.Drawing.Size(398, 256);
             this.Freestyle_groupBox_Reverb.TabIndex = 19;
             this.Freestyle_groupBox_Reverb.TabStop = false;
             this.Freestyle_groupBox_Reverb.Text = "$REVERB";
@@ -448,7 +423,7 @@
             this.Freestyle_singleButton_ReverbPreset.BackColor = System.Drawing.SystemColors.Control;
             this.Freestyle_singleButton_ReverbPreset.BeforeTouchSize = new System.Drawing.Size(119, 31);
             this.Freestyle_singleButton_ReverbPreset.IsBackStageButton = false;
-            this.Freestyle_singleButton_ReverbPreset.Location = new System.Drawing.Point(83, 15);
+            this.Freestyle_singleButton_ReverbPreset.Location = new System.Drawing.Point(249, 20);
             this.Freestyle_singleButton_ReverbPreset.Name = "Freestyle_singleButton_ReverbPreset";
             this.Freestyle_singleButton_ReverbPreset.Size = new System.Drawing.Size(119, 31);
             this.Freestyle_singleButton_ReverbPreset.TabIndex = 36;
@@ -465,7 +440,7 @@
             this.Freestyle_hSlider_ReverbMix.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbMix.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbMix.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbMix.Location = new System.Drawing.Point(24, 386);
+            this.Freestyle_hSlider_ReverbMix.Location = new System.Drawing.Point(207, 217);
             this.Freestyle_hSlider_ReverbMix.Name = "Freestyle_hSlider_ReverbMix";
             this.Freestyle_hSlider_ReverbMix.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbMix.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -478,7 +453,7 @@
             // Freestyle_label_Reverb_Mix
             // 
             this.Freestyle_label_Reverb_Mix.AutoSize = true;
-            this.Freestyle_label_Reverb_Mix.Location = new System.Drawing.Point(34, 369);
+            this.Freestyle_label_Reverb_Mix.Location = new System.Drawing.Point(217, 200);
             this.Freestyle_label_Reverb_Mix.Name = "Freestyle_label_Reverb_Mix";
             this.Freestyle_label_Reverb_Mix.Size = new System.Drawing.Size(82, 13);
             this.Freestyle_label_Reverb_Mix.TabIndex = 34;
@@ -492,7 +467,7 @@
             this.Freestyle_hSlider_ReverbEarlyMix.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbEarlyMix.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbEarlyMix.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbEarlyMix.Location = new System.Drawing.Point(24, 340);
+            this.Freestyle_hSlider_ReverbEarlyMix.Location = new System.Drawing.Point(207, 171);
             this.Freestyle_hSlider_ReverbEarlyMix.Name = "Freestyle_hSlider_ReverbEarlyMix";
             this.Freestyle_hSlider_ReverbEarlyMix.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbEarlyMix.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -505,7 +480,7 @@
             // Freestyle_label_Reverb_EarlyMix
             // 
             this.Freestyle_label_Reverb_EarlyMix.AutoSize = true;
-            this.Freestyle_label_Reverb_EarlyMix.Location = new System.Drawing.Point(34, 324);
+            this.Freestyle_label_Reverb_EarlyMix.Location = new System.Drawing.Point(217, 155);
             this.Freestyle_label_Reverb_EarlyMix.Name = "Freestyle_label_Reverb_EarlyMix";
             this.Freestyle_label_Reverb_EarlyMix.Size = new System.Drawing.Size(117, 13);
             this.Freestyle_label_Reverb_EarlyMix.TabIndex = 32;
@@ -519,7 +494,7 @@
             this.Freestyle_hSlider_ReverbPreDelay.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbPreDelay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbPreDelay.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbPreDelay.Location = new System.Drawing.Point(24, 295);
+            this.Freestyle_hSlider_ReverbPreDelay.Location = new System.Drawing.Point(207, 126);
             this.Freestyle_hSlider_ReverbPreDelay.Name = "Freestyle_hSlider_ReverbPreDelay";
             this.Freestyle_hSlider_ReverbPreDelay.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbPreDelay.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -532,7 +507,7 @@
             // Freestyle_label_Reverb_PreDelay
             // 
             this.Freestyle_label_Reverb_PreDelay.AutoSize = true;
-            this.Freestyle_label_Reverb_PreDelay.Location = new System.Drawing.Point(34, 278);
+            this.Freestyle_label_Reverb_PreDelay.Location = new System.Drawing.Point(217, 109);
             this.Freestyle_label_Reverb_PreDelay.Name = "Freestyle_label_Reverb_PreDelay";
             this.Freestyle_label_Reverb_PreDelay.Size = new System.Drawing.Size(120, 13);
             this.Freestyle_label_Reverb_PreDelay.TabIndex = 30;
@@ -546,7 +521,7 @@
             this.Freestyle_hSlider_ReverbDecay.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbDecay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbDecay.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbDecay.Location = new System.Drawing.Point(24, 249);
+            this.Freestyle_hSlider_ReverbDecay.Location = new System.Drawing.Point(207, 80);
             this.Freestyle_hSlider_ReverbDecay.Name = "Freestyle_hSlider_ReverbDecay";
             this.Freestyle_hSlider_ReverbDecay.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbDecay.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -559,7 +534,7 @@
             // Freestyle_label_Reverb_Decay
             // 
             this.Freestyle_label_Reverb_Decay.AutoSize = true;
-            this.Freestyle_label_Reverb_Decay.Location = new System.Drawing.Point(34, 233);
+            this.Freestyle_label_Reverb_Decay.Location = new System.Drawing.Point(217, 64);
             this.Freestyle_label_Reverb_Decay.Name = "Freestyle_label_Reverb_Decay";
             this.Freestyle_label_Reverb_Decay.Size = new System.Drawing.Size(99, 13);
             this.Freestyle_label_Reverb_Decay.TabIndex = 28;
@@ -573,7 +548,7 @@
             this.Freestyle_hSlider_ReverbBandWidth.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbBandWidth.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbBandWidth.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbBandWidth.Location = new System.Drawing.Point(24, 204);
+            this.Freestyle_hSlider_ReverbBandWidth.Location = new System.Drawing.Point(24, 215);
             this.Freestyle_hSlider_ReverbBandWidth.Name = "Freestyle_hSlider_ReverbBandWidth";
             this.Freestyle_hSlider_ReverbBandWidth.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbBandWidth.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -586,7 +561,7 @@
             // Freestyle_label_Reverb_BandWidth
             // 
             this.Freestyle_label_Reverb_BandWidth.AutoSize = true;
-            this.Freestyle_label_Reverb_BandWidth.Location = new System.Drawing.Point(34, 187);
+            this.Freestyle_label_Reverb_BandWidth.Location = new System.Drawing.Point(34, 198);
             this.Freestyle_label_Reverb_BandWidth.Name = "Freestyle_label_Reverb_BandWidth";
             this.Freestyle_label_Reverb_BandWidth.Size = new System.Drawing.Size(130, 13);
             this.Freestyle_label_Reverb_BandWidth.TabIndex = 26;
@@ -600,7 +575,7 @@
             this.Freestyle_hSlider_ReverbDensity.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbDensity.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbDensity.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbDensity.Location = new System.Drawing.Point(24, 158);
+            this.Freestyle_hSlider_ReverbDensity.Location = new System.Drawing.Point(24, 169);
             this.Freestyle_hSlider_ReverbDensity.Name = "Freestyle_hSlider_ReverbDensity";
             this.Freestyle_hSlider_ReverbDensity.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbDensity.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -613,7 +588,7 @@
             // Freestyle_label_Reverb_Density
             // 
             this.Freestyle_label_Reverb_Density.AutoSize = true;
-            this.Freestyle_label_Reverb_Density.Location = new System.Drawing.Point(34, 142);
+            this.Freestyle_label_Reverb_Density.Location = new System.Drawing.Point(34, 153);
             this.Freestyle_label_Reverb_Density.Name = "Freestyle_label_Reverb_Density";
             this.Freestyle_label_Reverb_Density.Size = new System.Drawing.Size(110, 13);
             this.Freestyle_label_Reverb_Density.TabIndex = 24;
@@ -627,7 +602,7 @@
             this.Freestyle_hSlider_ReverbDamping.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbDamping.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbDamping.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbDamping.Location = new System.Drawing.Point(24, 113);
+            this.Freestyle_hSlider_ReverbDamping.Location = new System.Drawing.Point(24, 124);
             this.Freestyle_hSlider_ReverbDamping.Name = "Freestyle_hSlider_ReverbDamping";
             this.Freestyle_hSlider_ReverbDamping.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbDamping.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -640,7 +615,7 @@
             // Freestyle_label_Reverb_Damping
             // 
             this.Freestyle_label_Reverb_Damping.AutoSize = true;
-            this.Freestyle_label_Reverb_Damping.Location = new System.Drawing.Point(34, 96);
+            this.Freestyle_label_Reverb_Damping.Location = new System.Drawing.Point(34, 107);
             this.Freestyle_label_Reverb_Damping.Name = "Freestyle_label_Reverb_Damping";
             this.Freestyle_label_Reverb_Damping.Size = new System.Drawing.Size(113, 13);
             this.Freestyle_label_Reverb_Damping.TabIndex = 22;
@@ -654,7 +629,7 @@
             this.Freestyle_hSlider_ReverbSize.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_ReverbSize.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbSize.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_ReverbSize.Location = new System.Drawing.Point(24, 69);
+            this.Freestyle_hSlider_ReverbSize.Location = new System.Drawing.Point(24, 80);
             this.Freestyle_hSlider_ReverbSize.Name = "Freestyle_hSlider_ReverbSize";
             this.Freestyle_hSlider_ReverbSize.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_ReverbSize.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -667,7 +642,7 @@
             // Freestyle_label_Reverb_Size
             // 
             this.Freestyle_label_Reverb_Size.AutoSize = true;
-            this.Freestyle_label_Reverb_Size.Location = new System.Drawing.Point(34, 53);
+            this.Freestyle_label_Reverb_Size.Location = new System.Drawing.Point(34, 64);
             this.Freestyle_label_Reverb_Size.Name = "Freestyle_label_Reverb_Size";
             this.Freestyle_label_Reverb_Size.Size = new System.Drawing.Size(87, 13);
             this.Freestyle_label_Reverb_Size.TabIndex = 20;
@@ -682,9 +657,9 @@
             this.Freestyle_onOffSwitch_Reverb.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_Reverb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_Reverb.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_Reverb.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_Reverb.Location = new System.Drawing.Point(23, 29);
             this.Freestyle_onOffSwitch_Reverb.Name = "Freestyle_onOffSwitch_Reverb";
-            this.Freestyle_onOffSwitch_Reverb.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_Reverb.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_Reverb.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_Reverb.TabIndex = 7;
             this.Freestyle_onOffSwitch_Reverb.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_Reverb_CheckedChanged);
@@ -695,9 +670,9 @@
             this.Freestyle_groupBox_Cure.Controls.Add(this.Freestyle_onOffSwitch_Cure);
             this.Freestyle_groupBox_Cure.Controls.Add(this.Freestyle_label_Tube);
             this.Freestyle_groupBox_Cure.Controls.Add(this.Freestyle_onOffSwitch_Tube);
-            this.Freestyle_groupBox_Cure.Location = new System.Drawing.Point(411, 232);
+            this.Freestyle_groupBox_Cure.Location = new System.Drawing.Point(258, 198);
             this.Freestyle_groupBox_Cure.Name = "Freestyle_groupBox_Cure";
-            this.Freestyle_groupBox_Cure.Size = new System.Drawing.Size(189, 160);
+            this.Freestyle_groupBox_Cure.Size = new System.Drawing.Size(151, 174);
             this.Freestyle_groupBox_Cure.TabIndex = 18;
             this.Freestyle_groupBox_Cure.TabStop = false;
             this.Freestyle_groupBox_Cure.Text = "$CURE";
@@ -705,9 +680,9 @@
             // Freestyle_buttonBox_CureLevel
             // 
             this.Freestyle_buttonBox_CureLevel.BackColor = System.Drawing.SystemColors.Control;
-            this.Freestyle_buttonBox_CureLevel.Location = new System.Drawing.Point(75, 19);
+            this.Freestyle_buttonBox_CureLevel.Location = new System.Drawing.Point(9, 59);
             this.Freestyle_buttonBox_CureLevel.Name = "Freestyle_buttonBox_CureLevel";
-            this.Freestyle_buttonBox_CureLevel.Size = new System.Drawing.Size(106, 43);
+            this.Freestyle_buttonBox_CureLevel.Size = new System.Drawing.Size(136, 43);
             this.Freestyle_buttonBox_CureLevel.TabIndex = 18;
             this.Freestyle_buttonBox_CureLevel.SelectedIndexChanged += new System.EventHandler(this.Freestyle_buttonBox_CureLevel_SelectedIndexChanged);
             // 
@@ -720,9 +695,9 @@
             this.Freestyle_onOffSwitch_Cure.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_Cure.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_Cure.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_Cure.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_Cure.Location = new System.Drawing.Point(9, 27);
             this.Freestyle_onOffSwitch_Cure.Name = "Freestyle_onOffSwitch_Cure";
-            this.Freestyle_onOffSwitch_Cure.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_Cure.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_Cure.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_Cure.TabIndex = 17;
             this.Freestyle_onOffSwitch_Cure.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_Cure_CheckedChanged);
@@ -730,11 +705,12 @@
             // Freestyle_label_Tube
             // 
             this.Freestyle_label_Tube.AutoSize = true;
-            this.Freestyle_label_Tube.Location = new System.Drawing.Point(11, 122);
+            this.Freestyle_label_Tube.Location = new System.Drawing.Point(6, 144);
             this.Freestyle_label_Tube.Name = "Freestyle_label_Tube";
             this.Freestyle_label_Tube.Size = new System.Drawing.Size(42, 13);
             this.Freestyle_label_Tube.TabIndex = 14;
             this.Freestyle_label_Tube.Text = "$TUBE";
+            this.Freestyle_label_Tube.Click += new System.EventHandler(this.Freestyle_label_Tube_Click);
             // 
             // Freestyle_onOffSwitch_Tube
             // 
@@ -745,9 +721,9 @@
             this.Freestyle_onOffSwitch_Tube.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_Tube.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_Tube.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_Tube.Location = new System.Drawing.Point(121, 114);
+            this.Freestyle_onOffSwitch_Tube.Location = new System.Drawing.Point(106, 142);
             this.Freestyle_onOffSwitch_Tube.Name = "Freestyle_onOffSwitch_Tube";
-            this.Freestyle_onOffSwitch_Tube.Size = new System.Drawing.Size(53, 28);
+            this.Freestyle_onOffSwitch_Tube.Size = new System.Drawing.Size(39, 28);
             this.Freestyle_onOffSwitch_Tube.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_Tube.TabIndex = 15;
             this.Freestyle_onOffSwitch_Tube.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_Tube_CheckedChanged);
@@ -758,9 +734,9 @@
             this.Freestyle_groupBox_Clarity.Controls.Add(this.Freestyle_hSlider_Clarity);
             this.Freestyle_groupBox_Clarity.Controls.Add(this.Freestyle_label_Clarity);
             this.Freestyle_groupBox_Clarity.Controls.Add(this.Freestyle_onOffSwitch_Clarity);
-            this.Freestyle_groupBox_Clarity.Location = new System.Drawing.Point(216, 232);
+            this.Freestyle_groupBox_Clarity.Location = new System.Drawing.Point(212, 18);
             this.Freestyle_groupBox_Clarity.Name = "Freestyle_groupBox_Clarity";
-            this.Freestyle_groupBox_Clarity.Size = new System.Drawing.Size(189, 160);
+            this.Freestyle_groupBox_Clarity.Size = new System.Drawing.Size(197, 167);
             this.Freestyle_groupBox_Clarity.TabIndex = 17;
             this.Freestyle_groupBox_Clarity.TabStop = false;
             this.Freestyle_groupBox_Clarity.Text = "$CLARITY";
@@ -768,9 +744,9 @@
             // Freestyle_buttonBox_ClarityMode
             // 
             this.Freestyle_buttonBox_ClarityMode.BackColor = System.Drawing.SystemColors.Control;
-            this.Freestyle_buttonBox_ClarityMode.Location = new System.Drawing.Point(68, 18);
+            this.Freestyle_buttonBox_ClarityMode.Location = new System.Drawing.Point(66, 17);
             this.Freestyle_buttonBox_ClarityMode.Name = "Freestyle_buttonBox_ClarityMode";
-            this.Freestyle_buttonBox_ClarityMode.Size = new System.Drawing.Size(106, 43);
+            this.Freestyle_buttonBox_ClarityMode.Size = new System.Drawing.Size(113, 43);
             this.Freestyle_buttonBox_ClarityMode.TabIndex = 18;
             this.Freestyle_buttonBox_ClarityMode.SelectedIndexChanged += new System.EventHandler(this.Freestyle_buttonBox_ClarityMode_SelectedIndexChanged);
             // 
@@ -782,7 +758,7 @@
             this.Freestyle_hSlider_Clarity.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_Clarity.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_Clarity.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_Clarity.Location = new System.Drawing.Point(13, 125);
+            this.Freestyle_hSlider_Clarity.Location = new System.Drawing.Point(13, 129);
             this.Freestyle_hSlider_Clarity.Name = "Freestyle_hSlider_Clarity";
             this.Freestyle_hSlider_Clarity.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_Clarity.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -795,7 +771,7 @@
             // Freestyle_label_Clarity
             // 
             this.Freestyle_label_Clarity.AutoSize = true;
-            this.Freestyle_label_Clarity.Location = new System.Drawing.Point(23, 108);
+            this.Freestyle_label_Clarity.Location = new System.Drawing.Point(10, 111);
             this.Freestyle_label_Clarity.Name = "Freestyle_label_Clarity";
             this.Freestyle_label_Clarity.Size = new System.Drawing.Size(86, 13);
             this.Freestyle_label_Clarity.TabIndex = 20;
@@ -810,9 +786,9 @@
             this.Freestyle_onOffSwitch_Clarity.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_Clarity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_Clarity.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_Clarity.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_Clarity.Location = new System.Drawing.Point(13, 23);
             this.Freestyle_onOffSwitch_Clarity.Name = "Freestyle_onOffSwitch_Clarity";
-            this.Freestyle_onOffSwitch_Clarity.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_Clarity.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_Clarity.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_Clarity.TabIndex = 17;
             this.Freestyle_onOffSwitch_Clarity.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_Clarity_CheckedChanged);
@@ -825,9 +801,9 @@
             this.Freestyle_groupBox_Bass.Controls.Add(this.Freestyle_hSlider_BassSpkSize);
             this.Freestyle_groupBox_Bass.Controls.Add(this.Freestyle_label_Bass_SpkSize);
             this.Freestyle_groupBox_Bass.Controls.Add(this.Freestyle_onOffSwitch_Bass);
-            this.Freestyle_groupBox_Bass.Location = new System.Drawing.Point(21, 232);
+            this.Freestyle_groupBox_Bass.Location = new System.Drawing.Point(17, 18);
             this.Freestyle_groupBox_Bass.Name = "Freestyle_groupBox_Bass";
-            this.Freestyle_groupBox_Bass.Size = new System.Drawing.Size(189, 352);
+            this.Freestyle_groupBox_Bass.Size = new System.Drawing.Size(189, 167);
             this.Freestyle_groupBox_Bass.TabIndex = 16;
             this.Freestyle_groupBox_Bass.TabStop = false;
             this.Freestyle_groupBox_Bass.Text = "$BASS";
@@ -835,9 +811,9 @@
             // Freestyle_buttonBox_BassMode
             // 
             this.Freestyle_buttonBox_BassMode.BackColor = System.Drawing.SystemColors.Control;
-            this.Freestyle_buttonBox_BassMode.Location = new System.Drawing.Point(21, 163);
+            this.Freestyle_buttonBox_BassMode.Location = new System.Drawing.Point(61, 19);
             this.Freestyle_buttonBox_BassMode.Name = "Freestyle_buttonBox_BassMode";
-            this.Freestyle_buttonBox_BassMode.Size = new System.Drawing.Size(143, 30);
+            this.Freestyle_buttonBox_BassMode.Size = new System.Drawing.Size(113, 30);
             this.Freestyle_buttonBox_BassMode.TabIndex = 22;
             this.Freestyle_buttonBox_BassMode.SelectedIndexChanged += new System.EventHandler(this.Freestyle_buttonBox_BassMode_SelectedIndexChanged);
             // 
@@ -849,7 +825,7 @@
             this.Freestyle_hSlider_BassGain.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_BassGain.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_BassGain.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_BassGain.Location = new System.Drawing.Point(13, 125);
+            this.Freestyle_hSlider_BassGain.Location = new System.Drawing.Point(13, 129);
             this.Freestyle_hSlider_BassGain.Name = "Freestyle_hSlider_BassGain";
             this.Freestyle_hSlider_BassGain.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_BassGain.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -862,7 +838,7 @@
             // Freestyle_label_Bass_Gain
             // 
             this.Freestyle_label_Bass_Gain.AutoSize = true;
-            this.Freestyle_label_Bass_Gain.Location = new System.Drawing.Point(23, 108);
+            this.Freestyle_label_Bass_Gain.Location = new System.Drawing.Point(10, 111);
             this.Freestyle_label_Bass_Gain.Name = "Freestyle_label_Bass_Gain";
             this.Freestyle_label_Bass_Gain.Size = new System.Drawing.Size(101, 13);
             this.Freestyle_label_Bass_Gain.TabIndex = 20;
@@ -876,7 +852,7 @@
             this.Freestyle_hSlider_BassSpkSize.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_BassSpkSize.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_BassSpkSize.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_BassSpkSize.Location = new System.Drawing.Point(13, 79);
+            this.Freestyle_hSlider_BassSpkSize.Location = new System.Drawing.Point(13, 80);
             this.Freestyle_hSlider_BassSpkSize.Name = "Freestyle_hSlider_BassSpkSize";
             this.Freestyle_hSlider_BassSpkSize.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_BassSpkSize.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
@@ -889,7 +865,7 @@
             // Freestyle_label_Bass_SpkSize
             // 
             this.Freestyle_label_Bass_SpkSize.AutoSize = true;
-            this.Freestyle_label_Bass_SpkSize.Location = new System.Drawing.Point(23, 63);
+            this.Freestyle_label_Bass_SpkSize.Location = new System.Drawing.Point(10, 63);
             this.Freestyle_label_Bass_SpkSize.Name = "Freestyle_label_Bass_SpkSize";
             this.Freestyle_label_Bass_SpkSize.Size = new System.Drawing.Size(92, 13);
             this.Freestyle_label_Bass_SpkSize.TabIndex = 18;
@@ -904,30 +880,31 @@
             this.Freestyle_onOffSwitch_Bass.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_Bass.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_Bass.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_Bass.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_Bass.Location = new System.Drawing.Point(13, 23);
             this.Freestyle_onOffSwitch_Bass.Name = "Freestyle_onOffSwitch_Bass";
-            this.Freestyle_onOffSwitch_Bass.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_Bass.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_Bass.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_Bass.TabIndex = 17;
             this.Freestyle_onOffSwitch_Bass.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_Bass_CheckedChanged);
             // 
             // Freestyle_groupBox_VHESurround
             // 
-            this.Freestyle_groupBox_VHESurround.Controls.Add(this.Freestyle_buttonBox_SurroundVHERoomSize);
             this.Freestyle_groupBox_VHESurround.Controls.Add(this.Freestyle_onOffSwitch_SurroundVHE);
-            this.Freestyle_groupBox_VHESurround.Location = new System.Drawing.Point(606, 7);
+            this.Freestyle_groupBox_VHESurround.Controls.Add(this.Freestyle_buttonBox_SurroundVHERoomSize);
+            this.Freestyle_groupBox_VHESurround.Location = new System.Drawing.Point(215, 272);
             this.Freestyle_groupBox_VHESurround.Name = "Freestyle_groupBox_VHESurround";
-            this.Freestyle_groupBox_VHESurround.Size = new System.Drawing.Size(208, 150);
+            this.Freestyle_groupBox_VHESurround.Size = new System.Drawing.Size(197, 124);
             this.Freestyle_groupBox_VHESurround.TabIndex = 13;
             this.Freestyle_groupBox_VHESurround.TabStop = false;
             this.Freestyle_groupBox_VHESurround.Text = "$VHE_SURROUND";
+            this.Freestyle_groupBox_VHESurround.Enter += new System.EventHandler(this.Freestyle_groupBox_VHESurround_Enter);
             // 
             // Freestyle_buttonBox_SurroundVHERoomSize
             // 
             this.Freestyle_buttonBox_SurroundVHERoomSize.BackColor = System.Drawing.SystemColors.Control;
             this.Freestyle_buttonBox_SurroundVHERoomSize.Location = new System.Drawing.Point(68, 25);
             this.Freestyle_buttonBox_SurroundVHERoomSize.Name = "Freestyle_buttonBox_SurroundVHERoomSize";
-            this.Freestyle_buttonBox_SurroundVHERoomSize.Size = new System.Drawing.Size(127, 69);
+            this.Freestyle_buttonBox_SurroundVHERoomSize.Size = new System.Drawing.Size(99, 69);
             this.Freestyle_buttonBox_SurroundVHERoomSize.TabIndex = 7;
             this.Freestyle_buttonBox_SurroundVHERoomSize.SelectedIndexChanged += new System.EventHandler(this.Freestyle_buttonBox_SurroundVHERoomSize_SelectedIndexChanged);
             // 
@@ -940,9 +917,9 @@
             this.Freestyle_onOffSwitch_SurroundVHE.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_SurroundVHE.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_SurroundVHE.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_SurroundVHE.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_SurroundVHE.Location = new System.Drawing.Point(19, 24);
             this.Freestyle_onOffSwitch_SurroundVHE.Name = "Freestyle_onOffSwitch_SurroundVHE";
-            this.Freestyle_onOffSwitch_SurroundVHE.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_SurroundVHE.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_SurroundVHE.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_SurroundVHE.TabIndex = 6;
             this.Freestyle_onOffSwitch_SurroundVHE.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_SurroundVHE_CheckedChanged);
@@ -955,9 +932,9 @@
             this.Freestyle_groupBox_Convolver.Controls.Add(this.Freestyle_hSlider_ConvIRGain);
             this.Freestyle_groupBox_Convolver.Controls.Add(this.Freestyle_openFileBox_ConvIRS);
             this.Freestyle_groupBox_Convolver.Controls.Add(this.Freestyle_label_ConvolverIRGain);
-            this.Freestyle_groupBox_Convolver.Location = new System.Drawing.Point(235, 7);
+            this.Freestyle_groupBox_Convolver.Location = new System.Drawing.Point(17, 191);
             this.Freestyle_groupBox_Convolver.Name = "Freestyle_groupBox_Convolver";
-            this.Freestyle_groupBox_Convolver.Size = new System.Drawing.Size(235, 194);
+            this.Freestyle_groupBox_Convolver.Size = new System.Drawing.Size(235, 181);
             this.Freestyle_groupBox_Convolver.TabIndex = 12;
             this.Freestyle_groupBox_Convolver.TabStop = false;
             this.Freestyle_groupBox_Convolver.Text = "$CONVOLVER";
@@ -971,9 +948,9 @@
             this.Freestyle_onOffSwitch_Convolver.DefaultColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.Freestyle_onOffSwitch_Convolver.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Freestyle_onOffSwitch_Convolver.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.Freestyle_onOffSwitch_Convolver.Location = new System.Drawing.Point(13, 25);
+            this.Freestyle_onOffSwitch_Convolver.Location = new System.Drawing.Point(13, 27);
             this.Freestyle_onOffSwitch_Convolver.Name = "Freestyle_onOffSwitch_Convolver";
-            this.Freestyle_onOffSwitch_Convolver.Size = new System.Drawing.Size(49, 22);
+            this.Freestyle_onOffSwitch_Convolver.Size = new System.Drawing.Size(39, 22);
             this.Freestyle_onOffSwitch_Convolver.SwitchColor = System.Drawing.Color.White;
             this.Freestyle_onOffSwitch_Convolver.TabIndex = 5;
             this.Freestyle_onOffSwitch_Convolver.CheckedChanged += new MetroSuite.MetroSwitch.CheckedChangedEventHandler(this.Freestyle_onOffSwitch_Convolver_CheckedChanged);
@@ -1015,7 +992,7 @@
             // Freestyle_label_ConvolverIRGain
             // 
             this.Freestyle_label_ConvolverIRGain.AutoSize = true;
-            this.Freestyle_label_ConvolverIRGain.Location = new System.Drawing.Point(95, 17);
+            this.Freestyle_label_ConvolverIRGain.Location = new System.Drawing.Point(84, 17);
             this.Freestyle_label_ConvolverIRGain.Name = "Freestyle_label_ConvolverIRGain";
             this.Freestyle_label_ConvolverIRGain.Size = new System.Drawing.Size(120, 13);
             this.Freestyle_label_ConvolverIRGain.TabIndex = 6;
@@ -1029,11 +1006,11 @@
             this.Freestyle_hSlider_PostVolume.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_PostVolume.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_PostVolume.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_PostVolume.Location = new System.Drawing.Point(21, 128);
+            this.Freestyle_hSlider_PostVolume.Location = new System.Drawing.Point(21, 108);
             this.Freestyle_hSlider_PostVolume.Name = "Freestyle_hSlider_PostVolume";
             this.Freestyle_hSlider_PostVolume.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_PostVolume.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.Freestyle_hSlider_PostVolume.Size = new System.Drawing.Size(208, 42);
+            this.Freestyle_hSlider_PostVolume.Size = new System.Drawing.Size(384, 42);
             this.Freestyle_hSlider_PostVolume.SliderColor = System.Drawing.Color.White;
             this.Freestyle_hSlider_PostVolume.TabIndex = 3;
             this.Freestyle_hSlider_PostVolume.Value = 0;
@@ -1042,7 +1019,7 @@
             // Freestyle_label_PostVolume
             // 
             this.Freestyle_label_PostVolume.AutoSize = true;
-            this.Freestyle_label_PostVolume.Location = new System.Drawing.Point(40, 108);
+            this.Freestyle_label_PostVolume.Location = new System.Drawing.Point(18, 89);
             this.Freestyle_label_PostVolume.Name = "Freestyle_label_PostVolume";
             this.Freestyle_label_PostVolume.Size = new System.Drawing.Size(121, 13);
             this.Freestyle_label_PostVolume.TabIndex = 2;
@@ -1056,11 +1033,11 @@
             this.Freestyle_hSlider_PreVolume.GradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(98)))), ((int)(((byte)(163)))));
             this.Freestyle_hSlider_PreVolume.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_PreVolume.LeftColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.Freestyle_hSlider_PreVolume.Location = new System.Drawing.Point(21, 42);
+            this.Freestyle_hSlider_PreVolume.Location = new System.Drawing.Point(21, 40);
             this.Freestyle_hSlider_PreVolume.Name = "Freestyle_hSlider_PreVolume";
             this.Freestyle_hSlider_PreVolume.RegionColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.Freestyle_hSlider_PreVolume.RightColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.Freestyle_hSlider_PreVolume.Size = new System.Drawing.Size(208, 40);
+            this.Freestyle_hSlider_PreVolume.Size = new System.Drawing.Size(384, 40);
             this.Freestyle_hSlider_PreVolume.SliderColor = System.Drawing.Color.White;
             this.Freestyle_hSlider_PreVolume.TabIndex = 1;
             this.Freestyle_hSlider_PreVolume.Value = 0;
@@ -1069,20 +1046,11 @@
             // Freestyle_label_PreVolume
             // 
             this.Freestyle_label_PreVolume.AutoSize = true;
-            this.Freestyle_label_PreVolume.Location = new System.Drawing.Point(40, 23);
+            this.Freestyle_label_PreVolume.Location = new System.Drawing.Point(18, 20);
             this.Freestyle_label_PreVolume.Name = "Freestyle_label_PreVolume";
             this.Freestyle_label_PreVolume.Size = new System.Drawing.Size(114, 13);
             this.Freestyle_label_PreVolume.TabIndex = 0;
             this.Freestyle_label_PreVolume.Text = "$PRE_VOLUME : 0dB";
-            // 
-            // label_Copyright
-            // 
-            this.label_Copyright.Location = new System.Drawing.Point(472, 654);
-            this.label_Copyright.Name = "label_Copyright";
-            this.label_Copyright.Size = new System.Drawing.Size(555, 25);
-            this.label_Copyright.TabIndex = 6;
-            this.label_Copyright.Text = "$COPYRIGHT";
-            this.label_Copyright.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // notifyIcon_Main
             // 
@@ -1213,18 +1181,87 @@
             this.Freestyle_irShape_ConvIR.Size = new System.Drawing.Size(209, 68);
             this.Freestyle_irShape_ConvIR.TabIndex = 8;
             // 
+            // tabControlAdv1
+            // 
+            this.tabControlAdv1.ActiveTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tabControlAdv1.ActiveTabForeColor = System.Drawing.Color.Empty;
+            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(428, 427);
+            this.tabControlAdv1.CloseButtonForeColor = System.Drawing.Color.Empty;
+            this.tabControlAdv1.CloseButtonHoverForeColor = System.Drawing.Color.Empty;
+            this.tabControlAdv1.CloseButtonPressedForeColor = System.Drawing.Color.Empty;
+            this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
+            this.tabControlAdv1.Controls.Add(this.tabPageAdv2);
+            this.tabControlAdv1.Controls.Add(this.tabPageAdv3);
+            this.tabControlAdv1.FocusOnTabClick = false;
+            this.tabControlAdv1.InActiveTabForeColor = System.Drawing.Color.Empty;
+            this.tabControlAdv1.Location = new System.Drawing.Point(196, 29);
+            this.tabControlAdv1.Name = "tabControlAdv1";
+            this.tabControlAdv1.SeparatorColor = System.Drawing.SystemColors.ControlDark;
+            this.tabControlAdv1.ShowSeparator = false;
+            this.tabControlAdv1.Size = new System.Drawing.Size(428, 427);
+            this.tabControlAdv1.TabIndex = 23;
+            this.tabControlAdv1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererOffice2016Colorful);
+            this.tabControlAdv1.ThemeName = "TabRendererBlendDark";
+            // 
+            // tabPageAdv1
+            // 
+            this.tabPageAdv1.Controls.Add(this.Freestyle_groupBox_Clarity);
+            this.tabPageAdv1.Controls.Add(this.Freestyle_groupBox_Bass);
+            this.tabPageAdv1.Controls.Add(this.Freestyle_groupBox_Convolver);
+            this.tabPageAdv1.Controls.Add(this.Freestyle_groupBox_Cure);
+            this.tabPageAdv1.Image = null;
+            this.tabPageAdv1.ImageSize = new System.Drawing.Size(16, 16);
+            this.tabPageAdv1.Location = new System.Drawing.Point(1, 22);
+            this.tabPageAdv1.Name = "tabPageAdv1";
+            this.tabPageAdv1.ShowCloseButton = true;
+            this.tabPageAdv1.Size = new System.Drawing.Size(425, 403);
+            this.tabPageAdv1.TabIndex = 1;
+            this.tabPageAdv1.Text = "Bass/Clarity";
+            this.tabPageAdv1.ThemesEnabled = false;
+            // 
+            // tabPageAdv2
+            // 
+            this.tabPageAdv2.Controls.Add(this.Freestyle_groupBox_Reverb);
+            this.tabPageAdv2.Controls.Add(this.Freestyle_groupBox_VHESurround);
+            this.tabPageAdv2.Controls.Add(this.Freestyle_groupBox_3DSurround);
+            this.tabPageAdv2.Image = null;
+            this.tabPageAdv2.ImageSize = new System.Drawing.Size(16, 16);
+            this.tabPageAdv2.Location = new System.Drawing.Point(1, 22);
+            this.tabPageAdv2.Name = "tabPageAdv2";
+            this.tabPageAdv2.ShowCloseButton = true;
+            this.tabPageAdv2.Size = new System.Drawing.Size(425, 403);
+            this.tabPageAdv2.TabIndex = 2;
+            this.tabPageAdv2.Text = "Surround";
+            this.tabPageAdv2.ThemesEnabled = false;
+            // 
+            // tabPageAdv3
+            // 
+            this.tabPageAdv3.Controls.Add(this.Freestyle_groupBox_SmartVolume);
+            this.tabPageAdv3.Controls.Add(this.Freestyle_label_PreVolume);
+            this.tabPageAdv3.Controls.Add(this.Freestyle_hSlider_PreVolume);
+            this.tabPageAdv3.Controls.Add(this.Freestyle_label_PostVolume);
+            this.tabPageAdv3.Controls.Add(this.Freestyle_hSlider_PostVolume);
+            this.tabPageAdv3.Image = null;
+            this.tabPageAdv3.ImageSize = new System.Drawing.Size(16, 16);
+            this.tabPageAdv3.Location = new System.Drawing.Point(1, 22);
+            this.tabPageAdv3.Name = "tabPageAdv3";
+            this.tabPageAdv3.ShowCloseButton = true;
+            this.tabPageAdv3.Size = new System.Drawing.Size(425, 403);
+            this.tabPageAdv3.TabIndex = 3;
+            this.tabPageAdv3.Text = "Volume";
+            this.tabPageAdv3.ThemesEnabled = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 686);
+            this.ClientSize = new System.Drawing.Size(626, 467);
+            this.Controls.Add(this.tabControlAdv1);
             this.Controls.Add(this.savePreset);
             this.Controls.Add(this.Freestyle_singleButton_Compressor);
             this.Controls.Add(this.Freestyle_singleButton_Equalizer);
             this.Controls.Add(this.onOffSwitch_Master);
             this.Controls.Add(this.loadPreset);
-            this.Controls.Add(this.label_Copyright);
-            this.Controls.Add(this.groupBox_Main);
             this.Controls.Add(this.label_MasterPower);
             this.Controls.Add(this.menuStrip_Main);
             this.DoubleBuffered = true;
@@ -1239,9 +1276,6 @@
             this.SizeChanged += new System.EventHandler(this.frmMain_SizeChanged);
             this.menuStrip_Main.ResumeLayout(false);
             this.menuStrip_Main.PerformLayout();
-            this.groupBox_Main.ResumeLayout(false);
-            this.panel_Freestyle.ResumeLayout(false);
-            this.panel_Freestyle.PerformLayout();
             this.Freestyle_groupBox_SmartVolume.ResumeLayout(false);
             this.Freestyle_groupBox_SmartVolume.PerformLayout();
             this.Freestyle_groupBox_3DSurround.ResumeLayout(false);
@@ -1258,6 +1292,12 @@
             this.Freestyle_groupBox_Convolver.ResumeLayout(false);
             this.Freestyle_groupBox_Convolver.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Freestyle_openFileBox_ConvIRS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).EndInit();
+            this.tabControlAdv1.ResumeLayout(false);
+            this.tabPageAdv1.ResumeLayout(false);
+            this.tabPageAdv2.ResumeLayout(false);
+            this.tabPageAdv3.ResumeLayout(false);
+            this.tabPageAdv3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1278,12 +1318,6 @@
         // Token: 0x040000B4 RID: 180
         private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Setting;
 
-        // Token: 0x040000B8 RID: 184
-        private global::System.Windows.Forms.GroupBox groupBox_Main;
-
-        // Token: 0x040000B9 RID: 185
-        private global::System.Windows.Forms.Label label_Copyright;
-
         // Token: 0x040000BA RID: 186
         private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_LatencySetting;
 
@@ -1294,9 +1328,6 @@
         private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_ChannelPan;
 
 
-
-        // Token: 0x0400012A RID: 298
-        private global::System.Windows.Forms.Panel panel_Freestyle;
 
         // Token: 0x0400012B RID: 299
         private global::Syncfusion.Windows.Forms.ButtonAdv Freestyle_singleButton_Compressor;
@@ -1510,5 +1541,9 @@
         private Syncfusion.Windows.Forms.SkinManager skinManager1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Syncfusion.Windows.Forms.ButtonAdv openIRS;
+        private Syncfusion.Windows.Forms.Tools.TabControlAdv tabControlAdv1;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv3;
     }
 }
