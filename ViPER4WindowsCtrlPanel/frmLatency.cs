@@ -65,17 +65,17 @@ namespace ViPER4WindowsBin
 			this.label_CurrentLatency.Text = GlobalMessages.CURRENT_LATENCY + " : " + (this.GetLatency() * 1000f).ToString("F04") + " ms";
 			this.label_DesiredLatency.Text = GlobalMessages.DESIRED_LATENCY;
 			this.label_LowLatencyNote.Text = GlobalMessages.LOW_LATENCY_NOTE;
-			this.singleButton_OK.ButtonText = GlobalMessages.OK;
-			this.singleButton_Cancel.ButtonText = GlobalMessages.CANCEL;
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(16384) * 1000f).ToString("F04") + " ms", "16384"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(8192) * 1000f).ToString("F04") + " ms", "8192"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(4096) * 1000f).ToString("F04") + " ms", "4096"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(2048) * 1000f).ToString("F04") + " ms", "2048"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(1024) * 1000f).ToString("F04") + " ms", "1024"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(512) * 1000f).ToString("F04") + " ms", "512"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(256) * 1000f).ToString("F04") + " ms", "256"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(128) * 1000f).ToString("F04") + " ms", "128"));
-			this.buttonBox_Latency.AddItem(new ButtonBox.Item((this.GetLatency(64) * 1000f).ToString("F04") + " ms", "64"));
+			this.singleButton_OK.Text = GlobalMessages.OK;
+			this.singleButton_Cancel.Text = GlobalMessages.CANCEL;
+            this.buttonBox_Latency.Items.Add((this.GetLatency(16384) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(8192) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(4096) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(2048) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(1024) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(512) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(256) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(128) * 1000f).ToString("F04") + " ms");
+            this.buttonBox_Latency.Items.Add((this.GetLatency(64) * 1000f).ToString("F04") + " ms");
 		}
 
 		// Token: 0x06000039 RID: 57 RVA: 0x00003694 File Offset: 0x00001894
@@ -96,90 +96,6 @@ namespace ViPER4WindowsBin
 			this.label_CurrentLatency.Text = GlobalMessages.CURRENT_LATENCY + " : " + (this.GetLatency() * 1000f).ToString("F04") + " ms";
 		}
 
-		// Token: 0x0600003C RID: 60 RVA: 0x00003710 File Offset: 0x00001910
-		private void buttonBox_Latency_ItemSelectedNotify(ButtonBox.Item itPrevItem, ButtonBox.Item itCurrItem, ButtonBox objSender)
-		{
-			if (itCurrItem == null)
-			{
-				return;
-			}
-			if (itCurrItem.Tag == null)
-			{
-				return;
-			}
-			string text = itCurrItem.Tag as string;
-			if (text == null)
-			{
-				return;
-			}
-			if (text == "")
-			{
-				return;
-			}
-			string key;
-			switch (key = text)
-			{
-			case "64":
-				this.m_iShortLen = 64;
-				this.m_iMiddleLen = 2048;
-				this.m_iLongLen = 16384;
-				return;
-			case "128":
-				this.m_iShortLen = 128;
-				this.m_iMiddleLen = 2048;
-				this.m_iLongLen = 8192;
-				return;
-			case "256":
-				this.m_iShortLen = 256;
-				this.m_iMiddleLen = 8192;
-				this.m_iLongLen = 0;
-				return;
-			case "512":
-				this.m_iShortLen = 512;
-				this.m_iMiddleLen = 4096;
-				this.m_iLongLen = 0;
-				return;
-			case "1024":
-				this.m_iShortLen = 1024;
-				this.m_iMiddleLen = 2048;
-				this.m_iLongLen = 0;
-				return;
-			case "2048":
-				this.m_iShortLen = 2048;
-				this.m_iMiddleLen = 0;
-				this.m_iLongLen = 0;
-				return;
-			case "4096":
-				this.m_iShortLen = 4096;
-				this.m_iMiddleLen = 0;
-				this.m_iLongLen = 0;
-				return;
-			case "8192":
-				this.m_iShortLen = 8192;
-				this.m_iMiddleLen = 0;
-				this.m_iLongLen = 0;
-				return;
-			case "16384":
-				this.m_iShortLen = 16384;
-				this.m_iMiddleLen = 0;
-				this.m_iLongLen = 0;
-				break;
-
-				return;
-			}
-		}
-
-		// Token: 0x0600003D RID: 61 RVA: 0x00003914 File Offset: 0x00001B14
-		private void singleButton_OK_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.OK;
-		}
-
-		// Token: 0x0600003E RID: 62 RVA: 0x0000391D File Offset: 0x00001B1D
-		private void singleButton_Cancel_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.Cancel;
-		}
 
 		// Token: 0x04000013 RID: 19
 		private int m_iShortLen = 4096;
@@ -189,5 +105,74 @@ namespace ViPER4WindowsBin
 
 		// Token: 0x04000015 RID: 21
 		private int m_iLongLen;
-	}
+
+        private void SingleButton_OK_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.OK;
+        }
+
+        private void SingleButton_Cancel_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.Cancel;
+
+        }
+
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView l = (ListView)sender;
+            if (l == null)return;
+            if (l.SelectedIndices[0] < 0 || l.SelectedIndices[0] > 8) return;
+
+            switch (l.SelectedIndices[0].ToString())
+            {
+                case "8":
+                    this.m_iShortLen = 64;
+                    this.m_iMiddleLen = 2048;
+                    this.m_iLongLen = 16384;
+                    return;
+                case "7":
+                    this.m_iShortLen = 128;
+                    this.m_iMiddleLen = 2048;
+                    this.m_iLongLen = 8192;
+                    return;
+                case "6":
+                    this.m_iShortLen = 256;
+                    this.m_iMiddleLen = 8192;
+                    this.m_iLongLen = 0;
+                    return;
+                case "5":
+                    this.m_iShortLen = 512;
+                    this.m_iMiddleLen = 4096;
+                    this.m_iLongLen = 0;
+                    return;
+                case "4":
+                    this.m_iShortLen = 1024;
+                    this.m_iMiddleLen = 2048;
+                    this.m_iLongLen = 0;
+                    return;
+                case "3":
+                    this.m_iShortLen = 2048;
+                    this.m_iMiddleLen = 0;
+                    this.m_iLongLen = 0;
+                    return;
+                case "2":
+                    this.m_iShortLen = 4096;
+                    this.m_iMiddleLen = 0;
+                    this.m_iLongLen = 0;
+                    return;
+                case "1":
+                    this.m_iShortLen = 8192;
+                    this.m_iMiddleLen = 0;
+                    this.m_iLongLen = 0;
+                    return;
+                case "0":
+                    this.m_iShortLen = 16384;
+                    this.m_iMiddleLen = 0;
+                    this.m_iLongLen = 0;
+                    break;
+
+                    return;
+            }
+            }
+    }
 }
