@@ -17,9 +17,6 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("798798");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("utit");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("6789798");
             this.singleButton_Load = new Syncfusion.Windows.Forms.ButtonAdv();
             this.singleButton_Cancel = new Syncfusion.Windows.Forms.ButtonAdv();
             this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
@@ -63,10 +60,6 @@
             // 
             // buttonBox_Preset
             // 
-            this.buttonBox_Preset.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
             this.buttonBox_Preset.Location = new System.Drawing.Point(5, 5);
             this.buttonBox_Preset.MultiSelect = false;
             this.buttonBox_Preset.Name = "buttonBox_Preset";
