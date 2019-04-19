@@ -277,6 +277,7 @@
             this.Controls.Add(this.label_CloseToTray);
             this.Controls.Add(this.onOffSwitch_CloseToTray);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSettings";

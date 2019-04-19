@@ -14,37 +14,27 @@ namespace ViPER4WindowsBin
 		public void SetBaseSystemParam(RuntimeUtils.ConfigProxy._ParamOfBaseSystem paramSystem)
 		{
 			this.m_paramSystem = paramSystem;
-			int num = this.m_paramSystem.m_bVirtApplied & 1;
-			int num2 = this.m_paramSystem.m_bVirtApplied >> 1 & 1;
 			int num3 = this.m_paramSystem.m_bVirtApplied >> 2 & 1;
-			if (num == 1)
-			{
-				this.checkBox_MusicMode.Checked = true;
-			}
-			if (num2 == 1)
-			{
-				this.checkBox_MovieMode.Checked = true;
-			}
 			if (num3 == 1)
 			{
 				this.checkBox_Freestyle.Checked = true;
 			}
 			if (this.m_paramSystem.m_bEnvRealizeEnabled == 1)
 			{
-				this.onOffSwitch_EnvRealize.SwitchedOn = true;
+				this.onOffSwitch_EnvRealize.Checked = true;
 			}
 			else
 			{
-				this.onOffSwitch_EnvRealize.SwitchedOn = false;
+				this.onOffSwitch_EnvRealize.Checked = false;
 			}
-			this.hSlider_EnvRealizeDrySignal.PositionFloat = this.m_paramSystem.m_rEnvRealizeDrySignal;
+			this.hSlider_EnvRealizeDrySignal.Value = (int)this.m_paramSystem.m_rEnvRealizeDrySignal*100;
 			if (this.m_paramSystem.m_bEnvRealizePreprocess == 1)
 			{
-				this.twoSelector_PrePostProcess.Selector = TwoSelector.SelectorPosition.SELECTOR_ON_LEFT;
+				this.twoSelector_PrePostProcess.Checked=false;
 			}
 			else
 			{
-				this.twoSelector_PrePostProcess.Selector = TwoSelector.SelectorPosition.SELECTOR_ON_RIGHT;
+				this.twoSelector_PrePostProcess.Checked=true;
 			}
 			for (int i = 0; i < this.comboBox_EnvRealizePreset.Items.Count; i++)
 			{
@@ -60,23 +50,15 @@ namespace ViPER4WindowsBin
 		// Token: 0x0600014F RID: 335 RVA: 0x00016DB0 File Offset: 0x00014FB0
 		public RuntimeUtils.ConfigProxy._ParamOfBaseSystem GetBaseSystemParam()
 		{
-			int num = 0;
-			int num2 = 0;
-			int num3 = 0;
-			if (this.checkBox_MusicMode.Checked)
-			{
-				num = 1;
-			}
-			if (this.checkBox_MovieMode.Checked)
-			{
-				num2 = 1;
-			}
-			if (this.checkBox_Freestyle.Checked)
+            int num1 = 0;
+            int num2 = 0;
+            int num3 = 0;
+            if (this.checkBox_Freestyle.Checked)
 			{
 				num3 = 1;
 			}
-			this.m_paramSystem.m_bVirtApplied = (num | num2 << 1 | num3 << 2);
-			if (this.onOffSwitch_EnvRealize.SwitchedOn)
+			this.m_paramSystem.m_bVirtApplied = (num1 | num2 << 1 | num3 << 2);
+			if (this.onOffSwitch_EnvRealize.Checked)
 			{
 				this.m_paramSystem.m_bEnvRealizeEnabled = 1;
 			}
@@ -84,7 +66,7 @@ namespace ViPER4WindowsBin
 			{
 				this.m_paramSystem.m_bEnvRealizeEnabled = 0;
 			}
-			if (this.twoSelector_PrePostProcess.Selector == TwoSelector.SelectorPosition.SELECTOR_ON_LEFT)
+			if (this.twoSelector_PrePostProcess.Checked == false)
 			{
 				this.m_paramSystem.m_bEnvRealizePreprocess = 1;
 			}
@@ -92,7 +74,7 @@ namespace ViPER4WindowsBin
 			{
 				this.m_paramSystem.m_bEnvRealizePreprocess = 0;
 			}
-			this.m_paramSystem.m_rEnvRealizeDrySignal = this.hSlider_EnvRealizeDrySignal.PositionFloat;
+			this.m_paramSystem.m_rEnvRealizeDrySignal = this.hSlider_EnvRealizeDrySignal.Value/100f;
 			if (this.comboBox_EnvRealizePreset.SelectedItem == null)
 			{
 				this.m_paramSystem.m_bEnvRealizeEnabled = 0;
@@ -117,34 +99,31 @@ namespace ViPER4WindowsBin
 			this.InitializeComponent();
 			this.Text = GlobalMessages.VIRTUALIZATION;
 			this.label_AudioSystemConfig.Text = GlobalMessages.AUDIO_SYSTEM_CONFIG;
-			this.singleButton_ResetConfig.ButtonText = GlobalMessages.VIRT_RESET;
+			this.singleButton_ResetConfig.Text = GlobalMessages.VIRT_RESET;
 			this.groupBox_VirtApplied.Text = GlobalMessages.VIRT_APPLIED;
-			this.checkBox_MusicMode.Text = GlobalMessages.MUSIC_MODE;
-			this.checkBox_MovieMode.Text = GlobalMessages.MOVIE_MODE;
 			this.checkBox_Freestyle.Text = GlobalMessages.FREESTYLE_MODE;
 			this.groupBox_VirtEnv.Text = GlobalMessages.VIRT_ENVIRONMENT;
 			this.label_PrePostProcess.Text = GlobalMessages.VIRT_PREPOST_PROCESS;
-			this.singleButton_OK.ButtonText = GlobalMessages.OK;
-			this.singleButton_Cancel.ButtonText = GlobalMessages.CANCEL;
-			this.buttonBox_AudioSystemConfig.ClearItem();
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_MONO, "0"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_STEREO, "1"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_HEADSET, "2"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_REARSTEREO, "3"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_QUAD, "4"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_X5P1, "5"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_X6P1, "6"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_X7P1, "7"));
-			this.buttonBox_AudioSystemConfig.AddItem(new ButtonBox.Item(GlobalMessages.AUDIO_SYSTEM_X8P1, "8"));
+			this.singleButton_OK.Text = GlobalMessages.OK;
+			this.singleButton_Cancel.Text = GlobalMessages.CANCEL;
+            this.buttonBox_AudioSystemConfig.Items.Clear();
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_MONO);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_STEREO);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_HEADSET);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_REARSTEREO);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_QUAD);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_X5P1);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_X6P1);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_X7P1);
+            this.buttonBox_AudioSystemConfig.Items.Add(GlobalMessages.AUDIO_SYSTEM_X8P1);
+
 			this.listView_Speaker.Columns[0].Text = GlobalMessages.VIRT_SPEAKER;
 			this.listView_Speaker.Columns[1].Text = GlobalMessages.VIRT_SPEAKER_ANGLE;
 			this.listView_Speaker.Items.Clear();
-			this.checkBox_MusicMode.Checked = false;
-			this.checkBox_MovieMode.Checked = false;
 			this.checkBox_Freestyle.Checked = false;
-			this.onOffSwitch_EnvRealize.SwitchedOn = false;
-			this.hSlider_EnvRealizeDrySignal.PositionFloat = 0.7f;
-			this.twoSelector_PrePostProcess.Selector = TwoSelector.SelectorPosition.SELECTOR_ON_LEFT;
+			this.onOffSwitch_EnvRealize.Checked = false;
+			this.hSlider_EnvRealizeDrySignal.Value = 70;
+			this.twoSelector_PrePostProcess.Checked = false;
 			this.comboBox_EnvRealizePreset.Items.Clear();
 			this.comboBox_EnvRealizePreset.Items.Add(new frmVirtualization.EnvRealizePreset(GlobalMessages.VIRT_ENVIR_SMALLROOM, 2));
 			this.comboBox_EnvRealizePreset.Items.Add(new frmVirtualization.EnvRealizePreset(GlobalMessages.VIRT_ENVIR_BATHROOM, 3));
@@ -405,95 +384,6 @@ namespace ViPER4WindowsBin
 			}
 		}
 
-		// Token: 0x06000153 RID: 339 RVA: 0x00017D24 File Offset: 0x00015F24
-		private void buttonBox_AudioSystemConfig_ItemSelectedNotify(ButtonBox.Item itPrevItem, ButtonBox.Item itCurrItem, ButtonBox objSender)
-		{
-			if (itCurrItem == null)
-			{
-				return;
-			}
-			if (itCurrItem.Tag == null)
-			{
-				return;
-			}
-			if (itCurrItem.Tag.GetType() != typeof(string))
-			{
-				return;
-			}
-			string text = itCurrItem.Tag as string;
-			if (string.IsNullOrEmpty(text))
-			{
-				return;
-			}
-			int num = -1;
-			if (!int.TryParse(text, out num))
-			{
-				return;
-			}
-			if (num < 0 || num > 8)
-			{
-				return;
-			}
-			this.m_nCurrentAudioSystem = num;
-			this.RefreshSpeakerList();
-		}
-
-		// Token: 0x06000154 RID: 340 RVA: 0x00017D90 File Offset: 0x00015F90
-		private void singleButton_ResetConfig_ButtonClickNotify(SingleButton objSender)
-		{
-			this.m_paramSystem.m_rpChannelAngle_00 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_01 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_02 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_03 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_04 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_05 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_06 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_07 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_08 = new float[9];
-			this.m_paramSystem.m_rpChannelAngle_00[0] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_01[0] = -30f;
-			this.m_paramSystem.m_rpChannelAngle_01[1] = 30f;
-			this.m_paramSystem.m_rpChannelAngle_02[0] = -90f;
-			this.m_paramSystem.m_rpChannelAngle_02[1] = 90f;
-			this.m_paramSystem.m_rpChannelAngle_03[0] = -150f;
-			this.m_paramSystem.m_rpChannelAngle_03[1] = 150f;
-			this.m_paramSystem.m_rpChannelAngle_04[0] = -45f;
-			this.m_paramSystem.m_rpChannelAngle_04[1] = 45f;
-			this.m_paramSystem.m_rpChannelAngle_04[2] = -135f;
-			this.m_paramSystem.m_rpChannelAngle_04[3] = 135f;
-			this.m_paramSystem.m_rpChannelAngle_05[0] = -30f;
-			this.m_paramSystem.m_rpChannelAngle_05[1] = 30f;
-			this.m_paramSystem.m_rpChannelAngle_05[2] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_05[3] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_05[4] = -110f;
-			this.m_paramSystem.m_rpChannelAngle_05[5] = 110f;
-			this.m_paramSystem.m_rpChannelAngle_06[0] = -30f;
-			this.m_paramSystem.m_rpChannelAngle_06[1] = 30f;
-			this.m_paramSystem.m_rpChannelAngle_06[2] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_06[3] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_06[4] = 180f;
-			this.m_paramSystem.m_rpChannelAngle_06[5] = -90f;
-			this.m_paramSystem.m_rpChannelAngle_06[6] = 90f;
-			this.m_paramSystem.m_rpChannelAngle_07[0] = -30f;
-			this.m_paramSystem.m_rpChannelAngle_07[1] = 30f;
-			this.m_paramSystem.m_rpChannelAngle_07[2] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_07[3] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_07[4] = -150f;
-			this.m_paramSystem.m_rpChannelAngle_07[5] = 150f;
-			this.m_paramSystem.m_rpChannelAngle_07[6] = -90f;
-			this.m_paramSystem.m_rpChannelAngle_07[7] = 90f;
-			this.m_paramSystem.m_rpChannelAngle_08[0] = -30f;
-			this.m_paramSystem.m_rpChannelAngle_08[1] = 30f;
-			this.m_paramSystem.m_rpChannelAngle_08[2] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_08[3] = 0f;
-			this.m_paramSystem.m_rpChannelAngle_08[4] = -150f;
-			this.m_paramSystem.m_rpChannelAngle_08[5] = 150f;
-			this.m_paramSystem.m_rpChannelAngle_08[6] = 180f;
-			this.m_paramSystem.m_rpChannelAngle_08[7] = -90f;
-			this.m_paramSystem.m_rpChannelAngle_08[8] = 90f;
-			this.RefreshSpeakerList();
-		}
-
 		// Token: 0x06000155 RID: 341 RVA: 0x00018128 File Offset: 0x00016328
 		private void listView_Speaker_MouseUp(object sender, MouseEventArgs e)
 		{
@@ -673,18 +563,6 @@ namespace ViPER4WindowsBin
 			this.RefreshSpeakerList();
 		}
 
-		// Token: 0x06000158 RID: 344 RVA: 0x0001848C File Offset: 0x0001668C
-		private void singleButton_OK_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.OK;
-		}
-
-		// Token: 0x06000159 RID: 345 RVA: 0x00018495 File Offset: 0x00016695
-		private void singleButton_Cancel_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.Cancel;
-		}
-
 		// Token: 0x0400018A RID: 394
 		private RuntimeUtils.ConfigProxy._ParamOfBaseSystem m_paramSystem = default(RuntimeUtils.ConfigProxy._ParamOfBaseSystem);
 
@@ -838,5 +716,85 @@ namespace ViPER4WindowsBin
 			// Token: 0x0400018E RID: 398
 			private float m_fAngle;
 		}
-	}
+
+        private void SingleButton_Cancel_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.Cancel;
+        }
+
+        private void SingleButton_OK_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.OK;
+        }
+
+        private void SingleButton_ResetConfig_Click(object sender, EventArgs e)
+        {
+            this.m_paramSystem.m_rpChannelAngle_00 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_01 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_02 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_03 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_04 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_05 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_06 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_07 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_08 = new float[9];
+            this.m_paramSystem.m_rpChannelAngle_00[0] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_01[0] = -30f;
+            this.m_paramSystem.m_rpChannelAngle_01[1] = 30f;
+            this.m_paramSystem.m_rpChannelAngle_02[0] = -90f;
+            this.m_paramSystem.m_rpChannelAngle_02[1] = 90f;
+            this.m_paramSystem.m_rpChannelAngle_03[0] = -150f;
+            this.m_paramSystem.m_rpChannelAngle_03[1] = 150f;
+            this.m_paramSystem.m_rpChannelAngle_04[0] = -45f;
+            this.m_paramSystem.m_rpChannelAngle_04[1] = 45f;
+            this.m_paramSystem.m_rpChannelAngle_04[2] = -135f;
+            this.m_paramSystem.m_rpChannelAngle_04[3] = 135f;
+            this.m_paramSystem.m_rpChannelAngle_05[0] = -30f;
+            this.m_paramSystem.m_rpChannelAngle_05[1] = 30f;
+            this.m_paramSystem.m_rpChannelAngle_05[2] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_05[3] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_05[4] = -110f;
+            this.m_paramSystem.m_rpChannelAngle_05[5] = 110f;
+            this.m_paramSystem.m_rpChannelAngle_06[0] = -30f;
+            this.m_paramSystem.m_rpChannelAngle_06[1] = 30f;
+            this.m_paramSystem.m_rpChannelAngle_06[2] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_06[3] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_06[4] = 180f;
+            this.m_paramSystem.m_rpChannelAngle_06[5] = -90f;
+            this.m_paramSystem.m_rpChannelAngle_06[6] = 90f;
+            this.m_paramSystem.m_rpChannelAngle_07[0] = -30f;
+            this.m_paramSystem.m_rpChannelAngle_07[1] = 30f;
+            this.m_paramSystem.m_rpChannelAngle_07[2] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_07[3] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_07[4] = -150f;
+            this.m_paramSystem.m_rpChannelAngle_07[5] = 150f;
+            this.m_paramSystem.m_rpChannelAngle_07[6] = -90f;
+            this.m_paramSystem.m_rpChannelAngle_07[7] = 90f;
+            this.m_paramSystem.m_rpChannelAngle_08[0] = -30f;
+            this.m_paramSystem.m_rpChannelAngle_08[1] = 30f;
+            this.m_paramSystem.m_rpChannelAngle_08[2] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_08[3] = 0f;
+            this.m_paramSystem.m_rpChannelAngle_08[4] = -150f;
+            this.m_paramSystem.m_rpChannelAngle_08[5] = 150f;
+            this.m_paramSystem.m_rpChannelAngle_08[6] = 180f;
+            this.m_paramSystem.m_rpChannelAngle_08[7] = -90f;
+            this.m_paramSystem.m_rpChannelAngle_08[8] = 90f;
+            this.RefreshSpeakerList();
+        }
+
+        private void HSlider_EnvRealizeDrySignal_Scroll(object sender, MetroSuite.MetroTrackbar.TrackbarEventArgs e)
+        {
+
+        }
+
+        private void ButtonBox_AudioSystemConfig_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListBox l = (ListBox)sender;
+            if (l == null) return;
+            if (l.SelectedIndex < 0 || l.SelectedIndex >8)return;
+            
+            this.m_nCurrentAudioSystem = l.SelectedIndex;
+            this.RefreshSpeakerList();
+        }
+    }
 }

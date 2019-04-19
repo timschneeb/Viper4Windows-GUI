@@ -263,6 +263,9 @@
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVirtualization.resx">
+      <DependentUpon>frmVirtualization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resources" />
     <EmbeddedResource Include="UIControls\ButtonBox.resources" />
     <EmbeddedResource Include="UIControls\EQShape.resources" />
