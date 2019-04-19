@@ -20,7 +20,6 @@
             this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
             this.singleButton_Load = new Syncfusion.Windows.Forms.ButtonAdv();
             this.singleButton_Cancel = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonBox_Preset = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
@@ -34,7 +33,7 @@
             this.singleButton_Load.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_Load.BeforeTouchSize = new System.Drawing.Size(112, 28);
             this.singleButton_Load.IsBackStageButton = false;
-            this.singleButton_Load.Location = new System.Drawing.Point(123, 260);
+            this.singleButton_Load.Location = new System.Drawing.Point(123, 197);
             this.singleButton_Load.Name = "singleButton_Load";
             this.singleButton_Load.Size = new System.Drawing.Size(112, 28);
             this.singleButton_Load.TabIndex = 8;
@@ -48,7 +47,7 @@
             this.singleButton_Cancel.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_Cancel.BeforeTouchSize = new System.Drawing.Size(112, 28);
             this.singleButton_Cancel.IsBackStageButton = false;
-            this.singleButton_Cancel.Location = new System.Drawing.Point(5, 260);
+            this.singleButton_Cancel.Location = new System.Drawing.Point(5, 197);
             this.singleButton_Cancel.Name = "singleButton_Cancel";
             this.singleButton_Cancel.Size = new System.Drawing.Size(112, 28);
             this.singleButton_Cancel.TabIndex = 9;
@@ -57,32 +56,23 @@
             this.singleButton_Cancel.UseVisualStyle = true;
             this.singleButton_Cancel.Click += new System.EventHandler(this.SingleButton_Cancel_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(48, 82);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 10;
-            // 
             // buttonBox_Preset
             // 
             this.buttonBox_Preset.Location = new System.Drawing.Point(5, 5);
             this.buttonBox_Preset.MultiSelect = false;
             this.buttonBox_Preset.Name = "buttonBox_Preset";
-            this.buttonBox_Preset.Size = new System.Drawing.Size(230, 249);
+            this.buttonBox_Preset.Size = new System.Drawing.Size(230, 186);
             this.buttonBox_Preset.TabIndex = 11;
             this.buttonBox_Preset.UseCompatibleStateImageBehavior = false;
-            this.buttonBox_Preset.View = System.Windows.Forms.View.Tile;
+            this.buttonBox_Preset.View = System.Windows.Forms.View.List;
             this.buttonBox_Preset.SelectedIndexChanged += new System.EventHandler(this.ButtonBox_Preset_SelectedIndexChanged);
             // 
             // frmEQPreset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(241, 299);
+            this.ClientSize = new System.Drawing.Size(237, 235);
             this.Controls.Add(this.buttonBox_Preset);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.singleButton_Cancel);
             this.Controls.Add(this.singleButton_Load);
             this.DoubleBuffered = true;
@@ -90,6 +80,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEQPreset";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "$EQUALIZER_PRESET";
@@ -103,6 +94,5 @@
         private Syncfusion.Windows.Forms.ButtonAdv singleButton_Cancel;
         private Syncfusion.Windows.Forms.ButtonAdv singleButton_Load;
         private System.Windows.Forms.ListView buttonBox_Preset;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

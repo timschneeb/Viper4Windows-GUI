@@ -103,7 +103,12 @@ namespace ViPER4WindowsBin
 			this.listView_TrayMenuSetting.Columns[0].Text = GlobalMessages.TRAY_MENU_PRESETNAME;
 			this.listView_TrayMenuSetting.Columns[1].Text = GlobalMessages.TRAY_MENU_PRESETMODE;
 			this.listView_TrayMenuSetting.Columns[2].Text = GlobalMessages.TRAY_MENU_PRESETFILE;
-			this.singleButton_AddNewItem.Text = GlobalMessages.ADD_NEW_ITEM;
+
+            this.chkUPdate.Text = GlobalMessages.CHECK_UPDATE;
+            this.buttonAdv2.Text = GlobalMessages.ABOUT;
+
+
+            this.singleButton_AddNewItem.Text = GlobalMessages.ADD_NEW_ITEM;
 			this.singleButton_OK.Text = GlobalMessages.OK;
 			this.singleButton_Cancel.Text = GlobalMessages.CANCEL;
 			this.toolStripMenuItem_RemoveItem.Text = GlobalMessages.REMOVE_ITEM;
@@ -398,6 +403,18 @@ namespace ViPER4WindowsBin
         private void OnOffSwitch_CloseToTray_CheckedChanged(object sender, bool isChecked)
         {
             this.m_bCloseToTray = isChecked;
+        }
+
+        private void ChkUPdate_Click(object sender, EventArgs e)
+        {
+            frmCheckUpdate frmCheckUpdate = new frmCheckUpdate();
+            frmCheckUpdate.ShowDialog();
+        }
+
+        private void ButtonAdv2_Click(object sender, EventArgs e)
+        {
+            frmAbout frmAbout = new frmAbout();
+            frmAbout.ShowDialog();
         }
     }
 }

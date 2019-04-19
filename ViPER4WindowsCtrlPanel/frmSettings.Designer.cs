@@ -40,6 +40,8 @@
             this.label_EnableCoexist = new System.Windows.Forms.Label();
             this.onOffSwitch_EnableCoexist = new MetroSuite.MetroSwitch();
             this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
+            this.chkUPdate = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.buttonAdv2 = new Syncfusion.Windows.Forms.ButtonAdv();
             this.groupBox_TrayMenuSetting.SuspendLayout();
             this.contextMenuStrip_TrayItem.SuspendLayout();
             this.SuspendLayout();
@@ -132,12 +134,11 @@
             // 
             // singleButton_OK
             // 
-            this.singleButton_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.singleButton_OK.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_OK.BackColor = System.Drawing.SystemColors.Control;
             this.singleButton_OK.BeforeTouchSize = new System.Drawing.Size(102, 28);
             this.singleButton_OK.IsBackStageButton = false;
-            this.singleButton_OK.Location = new System.Drawing.Point(241, 432);
+            this.singleButton_OK.Location = new System.Drawing.Point(241, 463);
             this.singleButton_OK.Name = "singleButton_OK";
             this.singleButton_OK.Office2007ColorScheme = Syncfusion.Windows.Forms.Office2007Theme.Managed;
             this.singleButton_OK.Size = new System.Drawing.Size(102, 28);
@@ -149,12 +150,11 @@
             // 
             // singleButton_Cancel
             // 
-            this.singleButton_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.singleButton_Cancel.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_Cancel.BackColor = System.Drawing.SystemColors.Control;
             this.singleButton_Cancel.BeforeTouchSize = new System.Drawing.Size(94, 28);
             this.singleButton_Cancel.IsBackStageButton = false;
-            this.singleButton_Cancel.Location = new System.Drawing.Point(141, 432);
+            this.singleButton_Cancel.Location = new System.Drawing.Point(141, 463);
             this.singleButton_Cancel.Name = "singleButton_Cancel";
             this.singleButton_Cancel.Office2007ColorScheme = Syncfusion.Windows.Forms.Office2007Theme.Managed;
             this.singleButton_Cancel.Size = new System.Drawing.Size(94, 28);
@@ -264,11 +264,41 @@
             this.skinManager1.Controls = this;
             this.skinManager1.VisualTheme = Syncfusion.Windows.Forms.VisualTheme.Office2016Colorful;
             // 
+            // chkUPdate
+            // 
+            this.chkUPdate.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
+            this.chkUPdate.BeforeTouchSize = new System.Drawing.Size(137, 27);
+            this.chkUPdate.IsBackStageButton = false;
+            this.chkUPdate.Location = new System.Drawing.Point(205, 430);
+            this.chkUPdate.Name = "chkUPdate";
+            this.chkUPdate.Size = new System.Drawing.Size(137, 27);
+            this.chkUPdate.TabIndex = 7;
+            this.chkUPdate.Text = "Update";
+            this.chkUPdate.ThemeName = "Office2016Colorful";
+            this.chkUPdate.UseVisualStyle = true;
+            this.chkUPdate.Click += new System.EventHandler(this.ChkUPdate_Click);
+            // 
+            // buttonAdv2
+            // 
+            this.buttonAdv2.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
+            this.buttonAdv2.BeforeTouchSize = new System.Drawing.Size(57, 27);
+            this.buttonAdv2.IsBackStageButton = false;
+            this.buttonAdv2.Location = new System.Drawing.Point(141, 430);
+            this.buttonAdv2.Name = "buttonAdv2";
+            this.buttonAdv2.Size = new System.Drawing.Size(57, 27);
+            this.buttonAdv2.TabIndex = 8;
+            this.buttonAdv2.Text = "About";
+            this.buttonAdv2.ThemeName = "Office2016Colorful";
+            this.buttonAdv2.UseVisualStyle = true;
+            this.buttonAdv2.Click += new System.EventHandler(this.ButtonAdv2_Click);
+            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 473);
+            this.ClientSize = new System.Drawing.Size(347, 504);
+            this.Controls.Add(this.buttonAdv2);
+            this.Controls.Add(this.chkUPdate);
             this.Controls.Add(this.onOffSwitch_EnableCoexist);
             this.Controls.Add(this.label_EnableCoexist);
             this.Controls.Add(this.singleButton_Cancel);
@@ -281,6 +311,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSettings";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "$SETTINGS";
             this.groupBox_TrayMenuSetting.ResumeLayout(false);
@@ -360,5 +391,7 @@
 		// Token: 0x040002EF RID: 751
 		private global::MetroSuite.MetroSwitch onOffSwitch_EnableCoexist;
         private Syncfusion.Windows.Forms.SkinManager skinManager1;
+        private Syncfusion.Windows.Forms.ButtonAdv buttonAdv2;
+        private Syncfusion.Windows.Forms.ButtonAdv chkUPdate;
     }
 }

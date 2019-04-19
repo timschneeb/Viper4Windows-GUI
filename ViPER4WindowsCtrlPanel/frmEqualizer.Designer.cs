@@ -650,6 +650,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmEqualizer";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "$EQUALIZER";
             ((System.ComponentModel.ISupportInitialize)(this.vSlider1)).EndInit();

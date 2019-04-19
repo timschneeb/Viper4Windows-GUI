@@ -28,7 +28,7 @@
             this.singleButton_Load.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_Load.BeforeTouchSize = new System.Drawing.Size(112, 28);
             this.singleButton_Load.IsBackStageButton = false;
-            this.singleButton_Load.Location = new System.Drawing.Point(123, 260);
+            this.singleButton_Load.Location = new System.Drawing.Point(123, 177);
             this.singleButton_Load.Name = "singleButton_Load";
             this.singleButton_Load.Office2007ColorScheme = Syncfusion.Windows.Forms.Office2007Theme.Managed;
             this.singleButton_Load.Size = new System.Drawing.Size(112, 28);
@@ -43,7 +43,7 @@
             this.singleButton_Cancel.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Office2016Colorful;
             this.singleButton_Cancel.BeforeTouchSize = new System.Drawing.Size(112, 28);
             this.singleButton_Cancel.IsBackStageButton = false;
-            this.singleButton_Cancel.Location = new System.Drawing.Point(5, 260);
+            this.singleButton_Cancel.Location = new System.Drawing.Point(5, 177);
             this.singleButton_Cancel.Name = "singleButton_Cancel";
             this.singleButton_Cancel.Office2007ColorScheme = Syncfusion.Windows.Forms.Office2007Theme.Managed;
             this.singleButton_Cancel.Size = new System.Drawing.Size(112, 28);
@@ -63,7 +63,7 @@
             this.buttonBox_Preset.Location = new System.Drawing.Point(5, 5);
             this.buttonBox_Preset.MultiSelect = false;
             this.buttonBox_Preset.Name = "buttonBox_Preset";
-            this.buttonBox_Preset.Size = new System.Drawing.Size(230, 249);
+            this.buttonBox_Preset.Size = new System.Drawing.Size(230, 166);
             this.buttonBox_Preset.TabIndex = 12;
             this.buttonBox_Preset.UseCompatibleStateImageBehavior = false;
             this.buttonBox_Preset.View = System.Windows.Forms.View.List;
@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 299);
+            this.ClientSize = new System.Drawing.Size(240, 213);
             this.Controls.Add(this.buttonBox_Preset);
             this.Controls.Add(this.singleButton_Cancel);
             this.Controls.Add(this.singleButton_Load);
@@ -82,6 +82,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmReverbPreset";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "$REVERB_PRESET";

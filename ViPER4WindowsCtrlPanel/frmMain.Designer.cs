@@ -26,9 +26,6 @@
             this.toolStripMenuItem_Virtualization = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_ResetEffect = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_Settings = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_Help = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_CheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_AboutV4W = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_Main = new System.Windows.Forms.GroupBox();
             this.panel_Freestyle = new System.Windows.Forms.Panel();
             this.Freestyle_groupBox_SmartVolume = new System.Windows.Forms.GroupBox();
@@ -130,8 +127,7 @@
             this.menuStrip_Main.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem_Language,
-            this.toolStripMenuItem_Setting,
-            this.toolStripMenuItem_Help});
+            this.toolStripMenuItem_Setting});
             this.menuStrip_Main.Location = new System.Drawing.Point(2, 2);
             this.menuStrip_Main.Name = "menuStrip_Main";
             this.menuStrip_Main.Size = new System.Drawing.Size(1038, 24);
@@ -189,29 +185,6 @@
             this.toolStripMenuItem_Settings.Size = new System.Drawing.Size(181, 22);
             this.toolStripMenuItem_Settings.Text = "$SETTINGS";
             this.toolStripMenuItem_Settings.Click += new System.EventHandler(this.toolStripMenuItem_Settings_Click);
-            // 
-            // toolStripMenuItem_Help
-            // 
-            this.toolStripMenuItem_Help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem_CheckUpdate,
-            this.toolStripMenuItem_AboutV4W});
-            this.toolStripMenuItem_Help.Name = "toolStripMenuItem_Help";
-            this.toolStripMenuItem_Help.Size = new System.Drawing.Size(92, 20);
-            this.toolStripMenuItem_Help.Text = "$MENU_HELP";
-            // 
-            // toolStripMenuItem_CheckUpdate
-            // 
-            this.toolStripMenuItem_CheckUpdate.Name = "toolStripMenuItem_CheckUpdate";
-            this.toolStripMenuItem_CheckUpdate.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem_CheckUpdate.Text = "$CHECK_UPDATE";
-            this.toolStripMenuItem_CheckUpdate.Click += new System.EventHandler(this.toolStripMenuItem_CheckUpdate_Click);
-            // 
-            // toolStripMenuItem_AboutV4W
-            // 
-            this.toolStripMenuItem_AboutV4W.Name = "toolStripMenuItem_AboutV4W";
-            this.toolStripMenuItem_AboutV4W.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem_AboutV4W.Text = "$ABOUT";
-            this.toolStripMenuItem_AboutV4W.Click += new System.EventHandler(this.toolStripMenuItem_AboutV4W_Click);
             // 
             // groupBox_Main
             // 
@@ -1272,15 +1245,6 @@
 
         // Token: 0x040000B4 RID: 180
         private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Setting;
-
-        // Token: 0x040000B5 RID: 181
-        private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Help;
-
-        // Token: 0x040000B6 RID: 182
-        private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_CheckUpdate;
-
-        // Token: 0x040000B7 RID: 183
-        private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_AboutV4W;
 
         // Token: 0x040000B8 RID: 184
         private global::System.Windows.Forms.GroupBox groupBox_Main;

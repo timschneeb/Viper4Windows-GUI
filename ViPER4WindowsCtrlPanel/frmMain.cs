@@ -191,9 +191,6 @@ namespace ViPER4WindowsBin
             this.toolStripMenuItem_Virtualization.Text = GlobalMessages.VIRTUALIZATION;
             this.toolStripMenuItem_ResetEffect.Text = GlobalMessages.RESET_EFFECT;
             this.toolStripMenuItem_Settings.Text = GlobalMessages.SETTINGS;
-            this.toolStripMenuItem_Help.Text = GlobalMessages.MENU_HELP;
-            this.toolStripMenuItem_CheckUpdate.Text = GlobalMessages.CHECK_UPDATE;
-            this.toolStripMenuItem_AboutV4W.Text = GlobalMessages.ABOUT;
             this.loadPreset.Text = GlobalMessages.LOAD_PRESET;
             this.savePreset.Text = GlobalMessages.SAVE_PRESET;
             this.Freestyle_label_PreVolume.Text = GlobalMessages.PRE_VOLUME;
@@ -1098,20 +1095,7 @@ namespace ViPER4WindowsBin
             }
         }
 
-        // Token: 0x060000D8 RID: 216 RVA: 0x0000BCD4 File Offset: 0x00009ED4
-        private void toolStripMenuItem_CheckUpdate_Click(object sender, EventArgs e)
-        {
-            frmCheckUpdate frmCheckUpdate = new frmCheckUpdate();
-            frmCheckUpdate.ShowDialog();
-        }
-
-        // Token: 0x060000D9 RID: 217 RVA: 0x0000BCF0 File Offset: 0x00009EF0
-        private void toolStripMenuItem_AboutV4W_Click(object sender, EventArgs e)
-        {
-            frmAbout frmAbout = new frmAbout();
-            frmAbout.ShowDialog();
-        }
-
+   
 
         // Token: 0x060000E2 RID: 226 RVA: 0x0000C1F8 File Offset: 0x0000A3F8
         private void Freestyle_openFileBox_ConvIRS_FileChangeNotify(string szFilePathName, OpenFileBox objSender)
