@@ -14,90 +14,28 @@ namespace ViPER4WindowsBin
 		{
 			this.InitializeComponent();
 			this.Text = GlobalMessages.EQUALIZER_PRESET;
-			this.singleButton_Load.ButtonText = GlobalMessages.LOAD_PRESET;
-			this.singleButton_Cancel.ButtonText = GlobalMessages.CANCEL;
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_FLAT, "0"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_SUPERBASS, "1"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_SOFTBASS, "2"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_ROCK, "3"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_RANDB, "4"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_CLASSIC, "5"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_POP, "6"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_JAZZ, "7"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_BLUES, "8"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_ELECTRONIC, "9"));
-			this.buttonBox_Preset.AddItem(new ButtonBox.Item(GlobalMessages.EQUALIZER_PRESET_VOCAL, "10"));
-			this.buttonBox_Preset.ItemSelectedNotify += this.PresetSelected;
-			for (int i = 0; i < this.m_faEQPreset.Length; i++)
+			this.singleButton_Load.Text = GlobalMessages.LOAD_PRESET;
+			this.singleButton_Cancel.Text = GlobalMessages.CANCEL;
+
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_FLAT);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_SUPERBASS);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_SOFTBASS);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_ROCK);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_RANDB);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_CLASSIC);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_POP);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_JAZZ);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_BLUES);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_ELECTRONIC);
+            buttonBox_Preset.Items.Add(GlobalMessages.EQUALIZER_PRESET_VOCAL);
+
+            //this.buttonBox_Preset.ItemSelectedNotify += this.PresetSelected;
+            for (int i = 0; i < this.m_faEQPreset.Length; i++)
 			{
 				this.m_faEQPreset[i] = 1f;
 			}
 		}
 
-		// Token: 0x06000094 RID: 148 RVA: 0x00008688 File Offset: 0x00006888
-		private void PresetSelected(ButtonBox.Item itPrevItem, ButtonBox.Item itCurrItem, ButtonBox objSender)
-		{
-			if (itCurrItem.Tag == null)
-			{
-				return;
-			}
-			if (!(itCurrItem.Tag is string))
-			{
-				return;
-			}
-			string text = itCurrItem.Tag as string;
-			if (text == "")
-			{
-				return;
-			}
-			int num = -1;
-			if (!int.TryParse(text, out num))
-			{
-				return;
-			}
-			if (num < 0 || num >= 11)
-			{
-				return;
-			}
-			switch (num)
-			{
-			case 0:
-				Array.Copy(this.m_faEQPreset_Flat, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 1:
-				Array.Copy(this.m_faEQPreset_SuperBass, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 2:
-				Array.Copy(this.m_faEQPreset_SoftBass, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 3:
-				Array.Copy(this.m_faEQPreset_Rock, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 4:
-				Array.Copy(this.m_faEQPreset_RandB, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 5:
-				Array.Copy(this.m_faEQPreset_Classic, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 6:
-				Array.Copy(this.m_faEQPreset_Pop, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 7:
-				Array.Copy(this.m_faEQPreset_Jazz, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 8:
-				Array.Copy(this.m_faEQPreset_Blues, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 9:
-				Array.Copy(this.m_faEQPreset_Electronic, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			case 10:
-				Array.Copy(this.m_faEQPreset_Vocal, this.m_faEQPreset, this.m_faEQPreset.Length);
-				return;
-			default:
-				return;
-			}
-		}
 
 		// Token: 0x06000095 RID: 149 RVA: 0x0000882F File Offset: 0x00006A2F
 		public void SetPreset(float[] faPreset)
@@ -117,18 +55,6 @@ namespace ViPER4WindowsBin
 		public float[] GetPreset()
 		{
 			return this.m_faEQPreset;
-		}
-
-		// Token: 0x06000097 RID: 151 RVA: 0x0000885F File Offset: 0x00006A5F
-		private void singleButton_Load_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.OK;
-		}
-
-		// Token: 0x06000098 RID: 152 RVA: 0x00008868 File Offset: 0x00006A68
-		private void singleButton_Cancel_ButtonClickNotify(SingleButton objSender)
-		{
-			base.DialogResult = DialogResult.Cancel;
 		}
 
 		// Token: 0x04000084 RID: 132
@@ -386,5 +312,64 @@ namespace ViPER4WindowsBin
 
 		// Token: 0x0400008F RID: 143
 		private float[] m_faEQPreset = new float[18];
-	}
+
+        private void ButtonBox_Preset_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (buttonBox_Preset.SelectedItems.Count != 1) return;
+            int idx = buttonBox_Preset.SelectedItems[0].Index;
+            if (idx  < 0 ||idx > 10)
+            {
+                return;
+            }
+            switch (idx)
+            {
+                case 0:
+                    Array.Copy(this.m_faEQPreset_Flat, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 1:
+                    Array.Copy(this.m_faEQPreset_SuperBass, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 2:
+                    Array.Copy(this.m_faEQPreset_SoftBass, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 3:
+                    Array.Copy(this.m_faEQPreset_Rock, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 4:
+                    Array.Copy(this.m_faEQPreset_RandB, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 5:
+                    Array.Copy(this.m_faEQPreset_Classic, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 6:
+                    Array.Copy(this.m_faEQPreset_Pop, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 7:
+                    Array.Copy(this.m_faEQPreset_Jazz, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 8:
+                    Array.Copy(this.m_faEQPreset_Blues, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 9:
+                    Array.Copy(this.m_faEQPreset_Electronic, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                case 10:
+                    Array.Copy(this.m_faEQPreset_Vocal, this.m_faEQPreset, this.m_faEQPreset.Length);
+                    return;
+                default:
+                    return;
+            }
+
+        }
+
+        private void SingleButton_Cancel_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.Cancel;
+        }
+
+        private void SingleButton_Load_Click(object sender, EventArgs e)
+        {
+            base.DialogResult = DialogResult.OK;
+        }
+    }
 }

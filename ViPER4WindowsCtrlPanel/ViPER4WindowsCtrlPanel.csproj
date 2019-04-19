@@ -230,6 +230,9 @@
     <EmbeddedResource Include="frmCompressor.resx">
       <DependentUpon>frmCompressor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEQPreset.resx">
+      <DependentUpon>frmEQPreset.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
