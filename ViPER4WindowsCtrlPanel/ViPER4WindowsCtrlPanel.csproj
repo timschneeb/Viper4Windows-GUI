@@ -128,12 +128,6 @@
     <Compile Include="frmCompressor.Designer.cs">
       <DependentUpon>frmCompressor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCompressorLite.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCompressorLite.Designer.cs">
-      <DependentUpon>frmCompressorLite.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmEQPreset.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChannelPan.resx">
       <DependentUpon>frmChannelPan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckUpdate.resx">
+      <DependentUpon>frmCheckUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompressor.resx">
+      <DependentUpon>frmCompressor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
